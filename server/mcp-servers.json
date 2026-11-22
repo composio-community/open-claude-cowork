@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "enabled": true,
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:\\Users"
+      ],
+      "linuxFallbackPath": "/app"
+    }
+  }
+}

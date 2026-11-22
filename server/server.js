@@ -109,15 +109,55 @@ function updateOpencodeConfig(composioUrl, composioHeaders) {
     };
   }
 
-  // Filesystem MCP Server
-  const defaultFsPath = process.platform === 'win32' ? 'C:\\Users' : process.cwd();
-  const filesystemPath = process.env.FILESYSTEM_MCP_PATH || defaultFsPath;
-  config.mcp.filesystem = {
-    type: 'local',
-    command: ['npx', '-y', '@modelcontextprotocol/server-filesystem', filesystemPath]
-  };
-
   fs.writeFileSync(opencodeConfigPath, JSON.stringify(config, null, 2));
+}
+
+// Load standalone custom MCP servers from server/mcp-servers.json (independent of OpenCode)
+function loadCustomMcpServers() {
+  const customConfigPath = path.join(__dirname, 'mcp-servers.json');
+  if (!fs.existsSync(customConfigPath)) return {};
+
+  try {
+    const raw = JSON.parse(fs.readFileSync(customConfigPath, 'utf8'));
+    const entries = raw?.mcpServers && typeof raw.mcpServers === 'object' ? raw.mcpServers : {};
+    const result = {};
+
+    for (const [name, cfg] of Object.entries(entries)) {
+      if (!cfg || cfg.enabled === false) continue;
+
+      if (cfg.type === 'http' && cfg.url) {
+        result[name] = {
+          type: 'http',
+          url: cfg.url,
+          ...(cfg.headers ? { headers: cfg.headers } : {})
+        };
+      } else if (cfg.type === 'stdio' && cfg.command) {
+        const fallback = process.env.FILESYSTEM_MCP_PATH || cfg.linuxFallbackPath || process.cwd();
+        const args = Array.isArray(cfg.args)
+          ? cfg.args.map((arg) => (
+              process.platform !== 'win32' && typeof arg === 'string' && /^[a-zA-Z]:[\\/]/.test(arg)
+                ? fallback
+                : arg
+            ))
+          : [];
+        const needsWinShell = process.platform === 'win32' && (
+          cfg.shell === true || /^(npx|npm|pnpm|yarn)(\.cmd)?$/i.test(cfg.command)
+        );
+        result[name] = {
+          type: 'stdio',
+          command: cfg.command,
+          args,
+          ...(cfg.env ? { env: cfg.env } : {}),
+          ...(needsWinShell ? { shell: true } : {})
+        };
+      }
+    }
+
+    return result;
+  } catch (err) {
+    console.warn('[MCP] Failed to load server/mcp-servers.json:', err.message);
+    return {};
+  }
 }
 
 // Middleware
@@ -238,15 +278,8 @@ app.post('/api/chat', async (req, res) => {
       };
     }
 
-    // 4. Filesystem MCP Server (local stdio)
-    const defaultFsPath = process.platform === 'win32' ? 'C:\\Users' : process.cwd();
-    const filesystemPath = process.env.FILESYSTEM_MCP_PATH || defaultFsPath;
-    mcpServers.filesystem = {
-      type: 'stdio',
-      command: 'npx',
-      args: ['-y', '@modelcontextprotocol/server-filesystem', filesystemPath],
-      shell: process.platform === 'win32'
-    };
+    // 4. Custom standalone MCP servers from server/mcp-servers.json (filesystem and any future MCPs)
+    Object.assign(mcpServers, loadCustomMcpServers());
 
     // Check if user specifically requested a skill (e.g. /skills or /skill <name> <query>)
     let processedPrompt = message;
