@@ -1,0 +1,308 @@
+{
+  "playbook": "multichannel_customer_communication",
+  "version": "2.0",
+  "language": "en",
+  "aligned_with": "SKILL.md sections 0-10 and references/* (rewritten 2026-10-02; v1 contradicted SKILL.md on placeholders, subject line, language, intake, follow-up cadence and refund rules)",
+  "purpose": "Delivery-technique playbook for the A) Email / B) Call Script / C) Voicemail block: structure, tone, objection handling and phrasing. It holds NO business rules. Refund ladder, compensation tiers, contacts, escalation triggers, internal systems and staff live in references/ and are not duplicated here.",
+  "how_to_load": "Read only the section for the channel requested (email, call_script or voicemail) plus channel_contract, core_message and self_check. Do not load the whole file.",
+
+  "precedence": [
+    "1. SKILL.md section 0 (unbreakable rules) always wins.",
+    "2. references/*.md (business-rules.md first) win over this file on any fact, figure, threshold or policy.",
+    "3. This file decides delivery technique only where SKILL.md and references/ are silent.",
+    "If this file ever seems to contradict SKILL.md or references/, follow those and tell the user about the conflict."
+  ],
+
+  "placeholder_rule": "Square brackets in this file are fill-in slots, never output. Replace every slot with real data. If a fact is missing, ask the user (SKILL.md section 2, one question at a time, in the user's language); never invent it and never leave a slot. Final customer text contains no square brackets except a real hyperlink: [tracking number](full URL).",
+
+  "sources_of_truth": {
+    "contacts, signed terms, refund ladder, escalation triggers, situation scripts": "references/business-rules.md",
+    "refunds, disputes, DocuSign, methods by country, Shalem payments": "references/refunds-and-disputes.md",
+    "defective, missing or wrong product, replacement, shipping, return label": "references/product-issues.md",
+    "what can be offered as compensation, GBK, spare tiers": "references/compensation-catalog.md (authoritative list: assets/Spare Options.txt)",
+    "cadence, deadline message, closing": "references/followup-and-closure.md",
+    "greetings, voicemail wording, phone technique": "references/call-templates.md",
+    "internal systems, staff, resolutions (never shown to the customer)": "references/internal-ops.md",
+    "exact formats, labels, tracking link, validation": "SKILL.md sections 3-9 and email_tool.js"
+  },
+
+  "channel_contract": {
+    "default": "Email, then Call Script, then Voicemail, in that order (A, B, C).",
+    "opt_out": "If the user asks for one or two channels ('only the email', 'solo voicemail', 'email y script', 'sin voicemail'), produce exactly those, keeping A/B/C order. Do not ask which channels they want.",
+    "language_rule": "Every customer-facing block is in English and starts with the line LANG: EN. Questions, assumptions and internal notes to the user are in the user's language, outside the customer block.",
+    "subject_line_rule": "A subject line exists only in the Email. Never label the call script or voicemail with one.",
+    "one_next_step": "Exactly one next action, with an owner and a date. If no date was given, ask the user.",
+    "consistency_rule": "All channels carry the same facts, figures, dates, names and next step. Only format, length and phrasing change.",
+    "bad_news_rule": "Bad news (no refund, refund not yet decided, a shipment that cannot be cancelled, a dispute blocking a refund) is delivered live, in the call script only. The email and voicemail omit the denial and confirm only what is true plus when the customer will hear from us. Omission is allowed; contradiction never.",
+    "refund_word_rule": "Never write 'refund' in any channel before the ladder in references/business-rules.md section 4 says it applies. An approved refund is good news and may be stated plainly.",
+    "no_leaks": "Never mention internal thresholds, approval logic, systems, task tools, staff names or bundle codes (list: SKILL.md 0.3 and references/internal-ops.md). Say 'your case is under review and you will hear from us by <date>' instead of describing an escalation.",
+    "never_do": [
+      "Invent a policy, price, date, reference number or device name",
+      "Promise an outcome that is not approved (refund, exception, waiver, extra)",
+      "Blame the customer, a colleague or a department",
+      "Let the channels contradict each other",
+      "Name the contact-channel mix (call, SMS, email) the customer will receive; say only when they will next hear from us"
+    ]
+  },
+
+  "diagnose": {
+    "note": "Silent step: do it before writing, never narrate it to the user or the customer.",
+    "step_1_situation_type": {
+      "options": ["service_recovery", "objection_handling", "refund_or_dispute", "replacement_or_shipping", "compensation_offer", "followup_or_deadline", "informational_reply"],
+      "rule": "Name the type first; it picks the tone, the reference file to load and the objection set."
+    },
+    "step_2_style": {
+      "competitive_when": "Transactional, one-off sale, low relationship risk: be clear and firm on boundaries.",
+      "collaborative_when": "Repeat customer, high-value or at risk of dispute or public review: ask about interests before defending a position.",
+      "mistake_to_avoid": "Using one style for every customer."
+    },
+    "step_3_interest_vs_position": {
+      "position": "What the customer asked for ('I want my money back').",
+      "interest": "Why: feeling heard, being made whole, predictability, fear of having been misled.",
+      "rule": "Address the interest first; the position often softens.",
+      "question": "What would make this feel resolved for you?"
+    },
+    "step_4_alternatives_and_limits": {
+      "customer_alternative": "What the customer may do if we cannot agree (bank dispute, public review, regulator complaint). Read it, never mention it as a threat.",
+      "our_limit": "What the references say we can approve (compensation tier, refund ladder). Never cross it without approval.",
+      "rule": "If the customer's alternative is costly for us (dispute, public review), lean collaborative. Never cross the approved limit."
+    },
+    "step_5_buyer_style": {
+      "note": "Awareness only. Never label the customer.",
+      "cues": {
+        "D": "Short, fact-first messages, wants the outcome now.",
+        "C": "Asks for documents, numbers, links, confirmations in writing.",
+        "S": "Warm, worried about continuity and about not being a bother.",
+        "I": "Chatty, narrative, enthusiastic."
+      }
+    }
+  },
+
+  "core_message": {
+    "rule": "Decide the ONE point the customer should take away before writing any channel. If it takes more than one sentence, the message will wander.",
+    "test": "Could the customer retell it accurately to someone else?",
+    "order_of_priorities": [
+      "1. Acknowledge and show you understood",
+      "2. State what we can do (the resolution), before any limit",
+      "3. One short reason or piece of evidence",
+      "4. The single next step: owner and date"
+    ],
+    "framing_note": "Say plainly what the customer keeps or receives. Do not dress a 'no' as a benefit; deliver it live and with the option that is available."
+  },
+
+  "email": {
+    "format_source": "SKILL.md section 3; build with formatEmail() and validate with checkEmail() from email_tool.js.",
+    "subject_line": {
+      "required": true,
+      "format": "#INVOICE - STORE NAME - SHORT REASON",
+      "rules": ["ALL CAPS", "Invoice number first", "Specific, no fake urgency"],
+      "example": "#224789 - SPRINGFIELD STORE - REPLACEMENT SHIPMENT CONFIRMATION"
+    },
+    "blocks": [
+      {"name": "greeting", "guidance": "Hi plus the name exactly as the customer gave it. No Mr./Ms./Mrs., no assumed gender."},
+      {"name": "acknowledgement", "guidance": "Thank them and show you understood in one or two sentences. One brief apology is enough; in follow-ups, thank first and do not re-open the mistake."},
+      {"name": "core_message", "guidance": "The single point. Lead with it."},
+      {"name": "detail_or_evidence", "guidance": "Facts, figures and dates only. If there is a FedEx number or URL, put it in one body line as [number](full URL), never a bare URL."},
+      {"name": "next_step", "guidance": "One action, one owner, one date."},
+      {"name": "sign_off", "guidance": "Warm regards, then exactly: Customer Service - Morena Mia Beauty Group. No personal name."}
+    ],
+    "length": {"target_words": "120-220", "paragraphs": "2-4 lines each"},
+    "rules": [
+      "Do not repeat the phone number or email in the body; the system adds them to the signature",
+      "No filler such as 'I hope this email finds you well' except as the opening line",
+      "No more than one request of the customer",
+      "No internal terms (SKILL.md 0.3)"
+    ],
+    "tone_by_style": {
+      "D": "Short, outcome first, no filler.",
+      "C": "Precise and evidence-first, only what is on file.",
+      "S": "Reassuring and steady, stress continuity and the next contact date.",
+      "I": "Warm opening, concrete close."
+    },
+    "avoid": ["Wall of text", "Corporate jargon", "'Per my last email' tone", "Blaming the customer", "Promising what is not approved", "Opening with a denial"]
+  },
+
+  "call_script": {
+    "format_source": "SKILL.md section 4; technique in references/call-templates.md.",
+    "note": "A guide, not a teleprompter: natural sentences, with options marked where the agent should adapt.",
+    "required_sections_in_order": ["Opening", "Rapport", "Objection handling", "Confirmation closing"],
+    "opening": {
+      "must_include": ["Who you are and the company", "The reason in one sentence", "Ask permission and check the time"],
+      "example": "Hi [name], this is [agent] from Morena Mia Beauty Group. I'm calling about your [issue] on invoice [invoice]. Do you have two minutes right now?"
+    },
+    "rapport": {
+      "rule": "ONE technique only: mirroring (match their pace and formality), small-talk alignment (acknowledge their immediate context) or shared experience (a brief similar case). Drop it if it feels performative.",
+      "must_not": "Overdo small talk, exaggerate, overshare or assume closeness."
+    },
+    "objection_handling": {
+      "method": [
+        "1. Let them finish; do not interrupt.",
+        "2. Paraphrase it and check: 'So the main concern is X. Did I get that right?'",
+        "3. Ask one open question to find the interest behind it.",
+        "4. Address the interest, not only the stated position.",
+        "5. Offer what is available, then check agreement."
+      ],
+      "lead_with": "What you CAN do. Avoid opening a sentence with 'policy', 'no', 'but', 'I can't', 'I don't know' or 'you should have'. Quoting the signed terms verbatim later in the call, as evidence, is fine.",
+      "bad_news": "This is where the bad news goes (see channel_contract.bad_news_rule): acknowledge, state it once and clearly, then the option that is available."
+    },
+    "confirmation_closing": {
+      "must_include": ["Summary of what was agreed", "The benefit to them in plain words", "Next step with owner and date", "Thank them and give the direct number"],
+      "example": "To recap: [action] by [date], and you'll receive [confirmation] by email. Does that match what you expected? You can always reach us at 888-249-4189, 8am-5pm EST, Monday-Friday."
+    },
+    "tracking_number": "Read the number slowly in groups of 3-4 digits and offer to send it by email. No link is read aloud."
+  },
+
+  "voicemail": {
+    "format_source": "SKILL.md section 5; wording in references/call-templates.md section 2.",
+    "max_lines": 7,
+    "target_seconds": "20-35",
+    "structure": [
+      "Line 1: Who is calling and the company.",
+      "Line 2: The reason in one line.",
+      "Line 3: One important fact.",
+      "Line 4: The next step.",
+      "Line 5: Callback number and hours: 888-249-4189, 8am-5pm EST, Monday-Friday.",
+      "Line 6: Repeat the number once.",
+      "Line 7: Warm close."
+    ],
+    "template": "Hello [Customer Name], this is [agent] from Morena Mia Beauty Group Customer Service.\nI'm calling about [reason in one line].\n[One important fact.]\n[Next step, with owner and date.]\nYou can reach us at 888-249-4189, 8am-5pm EST, Monday-Friday.\nAgain, that number is 888-249-4189.\nThank you, and we look forward to speaking with you.",
+    "rules": [
+      "Never deliver bad news in a voicemail; use it to invite them to talk",
+      "Never read a policy aloud and never include a full tracking number; say it was sent by email",
+      "If the voicemail confirms a shipping address for a replacement, ask them to reply or call back with it",
+      "Say when they will next hear from us; do not name the contact channel"
+    ]
+  },
+
+  "objection_library": [
+    {
+      "objection": "I want a full refund.",
+      "interest": "To be made whole; to feel the promise was kept.",
+      "response_starter": "I want to get you to the right outcome. Let me tell you what I can do for you today, and I'd like to hear what would make this feel resolved.",
+      "avoid": "Reciting the signed terms before acknowledging the loss; promising or even mentioning a refund before the ladder in business-rules.md section 4 applies."
+    },
+    {
+      "objection": "The product did not work for me / this is not what I expected.",
+      "interest": "Gap between what was promised and what they experienced; trust damage.",
+      "response_starter": "I'm sorry it hasn't gone the way you hoped. Tell me what you've seen so far, so we can close that gap together.",
+      "avoid": "Defending the original sale; offering a full refund; blaming how they used it."
+    },
+    {
+      "objection": "This is taking too long.",
+      "interest": "Feeling unimportant; need for predictability.",
+      "response_starter": "Thank you for your patience. Here is exactly where things stand, and the date you will hear from us next.",
+      "avoid": "Explaining internal delays the customer cannot act on."
+    },
+    {
+      "objection": "I want to speak to a manager.",
+      "interest": "To be heard; loss of control.",
+      "response_starter": "I can make sure your case gets a fresh review. First let me confirm I have your side exactly right so you don't have to repeat it.",
+      "avoid": "Treating it as a threat; saying 'escalated to our superiors'; naming anyone."
+    },
+    {
+      "objection": "Your terms say all sales are final, but that is unfair.",
+      "interest": "Fairness; wanting a reasoned exception.",
+      "response_starter": "I can see why that's frustrating. Let me walk you through the options that are available to you.",
+      "avoid": "Hiding behind the terms with no reasoning; paraphrasing legal text (quote it verbatim only when citing it)."
+    },
+    {
+      "objection": "Cancel my shipment.",
+      "interest": "Regret; worry about the charge.",
+      "response_starter": "I understand. Once a shipment has been processed it can't be cancelled, and that is in the shipping form you agreed to. What I can do is confirm your address and share the tracking.",
+      "avoid": "Sending this in writing first; giving a false hope. Deliver it live (channel_contract.bad_news_rule)."
+    },
+    {
+      "objection": "I'm going to dispute this with my bank / leave a review / contact BBB or PROFECO.",
+      "interest": "Feeling unheard; wanting leverage.",
+      "response_starter": "I'd much rather solve this with you directly. Please don't open a dispute with your bank, because it freezes the funds and slows everything down. Let's agree on the next step today.",
+      "avoid": "Threats; the long chargeback explanation unless they refuse to work with us. Add the internal escalation note (business-rules.md section 5)."
+    },
+    {
+      "objection": "I found it cheaper on another site.",
+      "interest": "Fear of having overpaid; reassurance on authenticity.",
+      "response_starter": "Thanks for telling me. Products from other sites can be imitations and don't carry our warranty. Yours is backed by us, and our devices carry a lifetime warranty with replacement.",
+      "avoid": "Attacking another seller by name; offering a price match that is not approved."
+    },
+    {
+      "objection": "I need to think about it.",
+      "interest": "An unspoken worry or missing information.",
+      "response_starter": "Of course. So I don't leave you with the wrong information, what's the one thing still unclear?",
+      "avoid": "Pushing harder on the same offer."
+    },
+    {
+      "objection": "I don't have time for this.",
+      "interest": "Competing priorities; this feels like a cost.",
+      "response_starter": "Understood. Here is the one thing I need from you, and I'll handle the rest.",
+      "avoid": "Long explanations or several questions."
+    }
+  ],
+
+  "phrase_bank": {
+    "acknowledge_and_confirm": [
+      "So it sounds like the main concern is not [X]. It is [Y]. Did I get that right?",
+      "If I had to sum it up in one sentence: [restate]. Is that fair?"
+    ],
+    "open_questions": [
+      "What would make this feel resolved for you?",
+      "How has this been affecting you so far?",
+      "What matters most to you in how we fix this?"
+    ],
+    "apology_and_recovery": [
+      "Thank you for your patience. You deserved a faster answer, and I'm sorry.",
+      "Here is what I'm doing about it, and when you will hear from us next."
+    ],
+    "what_i_can_do": [
+      "Here is what I can do for you today: [option from the approved catalog].",
+      "What I can offer is [option]; shall I set that up now?"
+    ],
+    "collaborative": [
+      "Let's find something that works for both of us.",
+      "To recap what we agreed: [summary]. Does that match your understanding?"
+    ],
+    "closing": [
+      "We're here to support you with the next step.",
+      "Let's work together on the next step.",
+      "When you're ready, we'll be happy to help you move forward.",
+      "Please let us know how we can best support the next stage.",
+      "Is there anything else I can help with before we wrap up?"
+    ],
+    "request_update": [
+      "Would [date] work for providing the update? If not, please let us know what timing works best for you.",
+      "To help us keep the project on track, could you please share the update by [date]?",
+      "To meet the planned timeline, we would appreciate your update by [date]. Please let us know if you need any support."
+    ]
+  },
+
+  "tone_matrix": {
+    "note": "Adapt per channel and inferred style. Never share the label with the customer.",
+    "D": {"email": "Short, outcome first.", "call": "Reach the point in the first 15 seconds; offer choices.", "voicemail": "One fact, one action."},
+    "C": {"email": "Evidence first; only what is on file.", "call": "Have the numbers ready; answer precisely.", "voicemail": "State the invoice and what you will send by email."},
+    "S": {"email": "Reassuring; stress continuity and the next contact date.", "call": "Slow down, validate, confirm often, no pressure.", "voicemail": "Gentle; clear promise of the next contact."},
+    "I": {"email": "Warm open, concrete close.", "call": "Let them talk, reflect their energy, then anchor on the outcome.", "voicemail": "Upbeat and short."}
+  },
+
+  "escalation": {
+    "customer_asks_for_manager": "That is a normal objection: answer in-channel with the objection_library entry.",
+    "agent_judges_escalation_needed": "Triggers: references/business-rules.md section 5. Add ONE note after the customer block, in the user's language, for example 'Nota interna - escalacion requerida: <motivo>'. It never appears in a customer channel.",
+    "customer_text_when_under_review": "Say the case is under review and name the date they will hear from us; promise no outcome and do not mention thresholds or approvals."
+  },
+
+  "recovery_extra_rule": "Doing 'something extra' to offset the hassle is allowed ONLY from the approved compensation options (references/compensation-catalog.md) and never as a cash promise. If nothing approved exists, acknowledge the hassle in words and state what you can do. Never invent an extra.",
+
+  "self_check": [
+    "Does the customer block start with LANG: EN and contain no square-bracket slots (apart from a real tracking hyperlink)?",
+    "Are the channels in A, B, C order, or only the ones the user asked for?",
+    "Is the subject line present only on the email, in CAPITALS, in the format #INVOICE - STORE NAME - SHORT REASON?",
+    "Email: 120-220 words, exact signature, no phone or email in the body, no honorific?",
+    "Voicemail: 7 lines or fewer, callback number and hours, number repeated once, no full tracking number?",
+    "Call script: all four sections in order (Opening, Rapport, Objection handling, Confirmation closing)?",
+    "Is there exactly ONE next step with an owner and a date, identical in every channel?",
+    "Is any bad news only in the call script, with no contradiction in the email or voicemail?",
+    "Is the word 'refund' absent unless the ladder says a refund applies?",
+    "Is every internal term, threshold, system and staff name absent from the customer text?",
+    "Is anything promised that is not approved? If yes, remove it.",
+    "If a FedEx number or URL exists: link in the email only, same number in every channel, checkEmail returns []?",
+    "If escalation is needed: is the note after the block, in the user's language, and never inside a customer channel?",
+    "Could the customer retell the core message accurately after one read or listen?"
+  ]
+}

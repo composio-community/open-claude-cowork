@@ -1,0 +1,32 @@
+services:
+  # Contenedor principal compatible con entorno local (puerto 3001) y emulador Cloud Run (puerto 8080)
+  open-claude-cowork:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: open-claude-cowork:local
+    container_name: open-claude-cowork
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=development
+      - HOST=0.0.0.0
+      - PORT=8080
+      # Variables estándar que inyecta Google Cloud Run (emulación local de Cloud Run)
+      - K_SERVICE=open-claude-cowork
+      - K_REVISION=open-claude-cowork-local-00001
+      - K_CONFIGURATION=open-claude-cowork
+    ports:
+      - "8080:8080"
+      - "3001:8080"
+    volumes:
+      # Montar código fuente en vivo para desarrollo y pruebas en caliente
+      - ./server:/app/server
+      - ./renderer:/app/renderer
+      - ./.claude:/app/.claude
+      - ./.env:/app/.env
+      # Preservar las dependencias instaladas dentro del contenedor Linux
+      - /app/server/node_modules
+    # Habilitar reinicio automático de Node al modificar archivos de server/
+    command: ["node", "--watch", "server/server.js"]
+    restart: unless-stopped

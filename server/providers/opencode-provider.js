@@ -68,32 +68,6 @@ export class OpencodeProvider extends BaseProvider {
   }
 
   /**
-   * Build MCP server config for Opencode format
-   * Converts from Claude-style mcpServers to Opencode format
-   */
-  buildMcpConfig(mcpServers) {
-    const mcpConfig = {};
-
-    for (const [name, config] of Object.entries(mcpServers)) {
-      if (config.type === 'http' || config.type === 'remote') {
-        mcpConfig[name] = {
-          type: 'remote',
-          url: config.url,
-          headers: config.headers || {}
-        };
-      } else if (config.type === 'local') {
-        mcpConfig[name] = {
-          type: 'local',
-          command: config.command,
-          environment: config.environment || {}
-        };
-      }
-    }
-
-    return mcpConfig;
-  }
-
-  /**
    * Execute a query using Opencode SDK
    * Matches the same interface as Claude provider
    *

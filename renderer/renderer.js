@@ -47,6 +47,14 @@ let browserDisplayMode = 'hidden'; // 'inline' | 'sidebar' | 'hidden'
 let allChats = [];
 let currentChatId = null;
 
+// Skills & MCP state
+let availableSkills = [];
+let mcpStatus = null;
+let slashMenuState = {
+  home: { items: [], activeIndex: 0 },
+  chat: { items: [], activeIndex: 0 }
+};
+
 // Model configurations per provider
 const providerModels = {
   claude: [
@@ -65,16 +73,332 @@ const providerModels = {
     { value: 'anthropic/claude-sonnet-4-5-20250929', label: 'Claude Sonnet 4.5', desc: 'Best balance' },
     { value: 'anthropic/claude-opus-4-5-20251101', label: 'Claude Opus 4.5', desc: 'Most capable' },
     { value: 'anthropic/claude-haiku-4-5-20251001', label: 'Claude Haiku 4.5', desc: 'Fastest' }
+  ],
+  gemini: [
+    { value: 'gemini-3.8-flash', label: 'Gemini 3.8 Flash', desc: 'Google Gemini Flash', default: true },
+    { value: 'gemini-4-argon', label: 'Gemini 4 Argon', desc: 'Google Gemini Argon' },
+    { value: 'gemini-2.5-flash', label: 'Gemini 2.5 Flash', desc: 'Fast & versatile' },
+    { value: 'gemini-2.5-pro', label: 'Gemini 2.5 Pro', desc: 'Advanced reasoning' }
   ]
 };
 
 // Initialize
 function init() {
+  initTheme();
   updateGreeting();
   setupEventListeners();
   loadAllChats();
   renderChatHistory();
+  loadSkillsAndMcpStatus();
   homeInput.focus();
+}
+
+// Theme management (Dark / Light)
+function initTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    applyTheme(savedTheme);
+  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    applyTheme('dark');
+  } else {
+    applyTheme('light');
+  }
+
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem('theme')) {
+        applyTheme(e.matches ? 'dark' : 'light');
+      }
+    });
+  }
+}
+
+function applyTheme(theme) {
+  const isDark = theme === 'dark';
+  document.documentElement.setAttribute('data-theme', theme);
+  if (isDark) {
+    document.body.classList.add('dark-theme');
+  } else {
+    document.body.classList.remove('dark-theme');
+  }
+
+  updateThemeToggleButtons(isDark);
+}
+
+function updateThemeToggleButtons(isDark) {
+  const buttons = document.querySelectorAll('.theme-toggle-btn');
+  buttons.forEach((btn) => {
+    const sunIcon = btn.querySelector('.sun-icon');
+    const moonIcon = btn.querySelector('.moon-icon');
+    if (sunIcon && moonIcon) {
+      if (isDark) {
+        sunIcon.classList.add('hidden');
+        moonIcon.classList.remove('hidden');
+        btn.setAttribute('title', 'Switch to light mode');
+      } else {
+        sunIcon.classList.remove('hidden');
+        moonIcon.classList.add('hidden');
+        btn.setAttribute('title', 'Switch to dark mode');
+      }
+    }
+  });
+}
+
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-theme') || (document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+  const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('theme', nextTheme);
+  applyTheme(nextTheme);
+}
+
+window.toggleTheme = toggleTheme;
+initTheme(); // Apply early to prevent theme flashing
+
+// Fetch skills and MCP status from backend
+async function loadSkillsAndMcpStatus() {
+  try {
+    const [skillsRes, mcpRes] = await Promise.all([
+      window.electronAPI?.getSkills ? window.electronAPI.getSkills() : Promise.resolve({ skills: [] }),
+      window.electronAPI?.getMcpStatus ? window.electronAPI.getMcpStatus() : Promise.resolve(null)
+    ]);
+
+    if (skillsRes?.skills && Array.isArray(skillsRes.skills)) {
+      availableSkills = skillsRes.skills;
+    }
+    mcpStatus = mcpRes;
+  } catch (error) {
+    console.warn('[UI] Failed to load skills or MCP status:', error);
+  }
+
+  renderSkillsMenus();
+  renderMcpMenus();
+}
+
+function renderSkillsMenus() {
+  document.querySelectorAll('.skills-menu').forEach((menu) => {
+    const isHome = Boolean(menu.closest('#homeForm'));
+    if (availableSkills.length === 0) {
+      menu.innerHTML = '<div class="dropdown-empty">No skills found in .claude/skills</div>';
+      return;
+    }
+
+    const itemsHtml = availableSkills.map((skill) => `
+      <div class="dropdown-item" data-skill-id="${escapeHtml(skill.id)}">
+        <div class="item-row">
+          <span class="item-label">/skill ${escapeHtml(skill.id)}</span>
+        </div>
+        <span class="item-desc">${escapeHtml(skill.description || skill.name || '')}</span>
+      </div>
+    `).join('');
+
+    menu.innerHTML = `
+      ${itemsHtml}
+      <div class="dropdown-item" data-skill-cmd="/skills">
+        <div class="item-row">
+          <span class="item-label">/skills</span>
+        </div>
+        <span class="item-desc">List all available skills in chat</span>
+      </div>
+    `;
+
+    menu.querySelectorAll('.dropdown-item').forEach((item) => {
+      item.addEventListener('click', () => {
+        const skillId = item.dataset.skillId;
+        const skillCmd = item.dataset.skillCmd;
+        const targetInput = isHome ? homeInput : messageInput;
+        const targetBtn = isHome ? homeSendBtn : chatSendBtn;
+
+        if (skillId) {
+          insertSkillCommand(targetInput, targetBtn, `/skill ${skillId} `);
+        } else if (skillCmd) {
+          insertSkillCommand(targetInput, targetBtn, skillCmd);
+        }
+
+        const dropdown = menu.closest('.dropdown-container');
+        if (dropdown) dropdown.classList.remove('open');
+      });
+    });
+  });
+}
+
+function insertSkillCommand(input, sendBtn, commandText) {
+  const current = input.value.trimStart();
+  if (current.startsWith('/skill')) {
+    const rest = current.replace(/^\/skill(?:\s+\S+)?\s*/, '');
+    input.value = commandText + rest;
+  } else {
+    input.value = commandText + current;
+  }
+  autoResizeTextarea(input);
+  updateSendButton(input, sendBtn);
+  input.focus();
+}
+
+function renderMcpMenus() {
+  const braveReady = Boolean(mcpStatus?.brave?.configured);
+  const clickupHasKey = Boolean(mcpStatus?.clickup?.hasApiKey);
+  const clickupConnected = Boolean(mcpStatus?.clickup?.authenticated || clickupHasKey);
+  const clickupUrl = mcpStatus?.clickup?.url || 'https://mcp.clickup.com/mcp';
+  const composioReady = Boolean(mcpStatus?.composio?.configured);
+
+  document.querySelectorAll('.mcp-status-dot').forEach((dot) => {
+    dot.classList.remove('ready', 'partial');
+    if (braveReady && clickupConnected) {
+      dot.classList.add('ready');
+    } else if (braveReady || clickupConnected || mcpStatus?.clickup?.configured) {
+      dot.classList.add('partial');
+    }
+  });
+
+  document.querySelectorAll('.mcp-menu').forEach((menu) => {
+    if (!mcpStatus) {
+      menu.innerHTML = '<div class="dropdown-empty">Backend unavailable</div>';
+      return;
+    }
+
+    const clickupBadge = clickupConnected
+      ? `<span class="mcp-badge ok" title="${clickupHasKey ? 'Autenticado con API Key' : 'Autenticado vía OAuth'}">Conectado</span>`
+      : `<button type="button" class="mcp-badge warn mcp-oauth-action" onclick="window.startClickUpOAuth(event)" title="Abrir ventana de autenticación ClickUp">Conectar</button>`;
+    const braveBadge = braveReady
+      ? '<span class="mcp-badge ok">Ready</span>'
+      : '<span class="mcp-badge off">Unconfigured</span>';
+    const composioBadge = composioReady
+      ? '<span class="mcp-badge ok">Ready</span>'
+      : '<span class="mcp-badge off">Unconfigured</span>';
+
+    menu.innerHTML = `
+      <div class="mcp-status-row">
+        <div>
+          <div class="mcp-status-name">Brave Search MCP</div>
+          <div class="mcp-status-detail">stdio · llm/context</div>
+        </div>
+        ${braveBadge}
+      </div>
+      <div class="mcp-status-row">
+        <div>
+          <div class="mcp-status-name">ClickUp MCP</div>
+          <div class="mcp-status-detail">${escapeHtml(clickupUrl)}</div>
+        </div>
+        ${clickupBadge}
+      </div>
+      <div class="mcp-status-row">
+        <div>
+          <div class="mcp-status-name">Composio MCP</div>
+          <div class="mcp-status-detail">Tool Router</div>
+        </div>
+        ${composioBadge}
+      </div>
+    `;
+  });
+}
+
+// Global handler to launch OAuth popup from the ClickUp MCP row
+window.startClickUpOAuth = function(e) {
+  if (e) {
+    e.stopPropagation();
+  }
+  const width = 600;
+  const height = 720;
+  const left = window.screenX + (window.outerWidth - width) / 2;
+  const top = window.screenY + (window.outerHeight - height) / 2;
+  const authUrl = '/api/auth/clickup/login';
+
+  const popup = window.open(
+    authUrl,
+    'clickup_oauth_popup',
+    `width=${width},height=${height},left=${left},top=${top},status=no,resizable=yes`
+  );
+
+  if (popup && popup.focus) {
+    popup.focus();
+  }
+};
+
+// Listen for OAuth completion message from popup window
+window.addEventListener('message', (event) => {
+  if (event.data?.type === 'CLICKUP_AUTH_SUCCESS') {
+    console.log('[UI] ClickUp OAuth succeeded! Reloading MCP status...');
+    loadSkillsAndMcpStatus();
+  }
+});
+
+function getSlashSuggestions(value) {
+  if (!value.startsWith('/')) return [];
+  // Hide menu once user typed a skill id and moved on to their prompt body
+  if (/^\/skill\s+\S+\s+/.test(value)) return [];
+
+  const query = value.toLowerCase();
+  const candidates = [
+    {
+      cmd: '/skills',
+      insertText: '/skills',
+      desc: 'List all available skills'
+    },
+    ...availableSkills.map((skill) => ({
+      cmd: `/skill ${skill.id}`,
+      insertText: `/skill ${skill.id} `,
+      desc: skill.description || skill.name || 'Claude Skill'
+    }))
+  ];
+
+  return candidates.filter((c) => c.cmd.toLowerCase().startsWith(query) || query === '/');
+}
+
+function updateSlashAutocomplete(context) {
+  const input = context === 'home' ? homeInput : messageInput;
+  const sendBtn = context === 'home' ? homeSendBtn : chatSendBtn;
+  const menu = document.getElementById(context === 'home' ? 'homeSlashMenu' : 'chatSlashMenu');
+  if (!menu) return;
+
+  const suggestions = getSlashSuggestions(input.value);
+  if (suggestions.length === 0) {
+    slashMenuState[context] = { items: [], activeIndex: 0 };
+    menu.classList.add('hidden');
+    menu.innerHTML = '';
+    return;
+  }
+
+  const prevIndex = slashMenuState[context].activeIndex || 0;
+  const activeIndex = Math.min(prevIndex, suggestions.length - 1);
+  slashMenuState[context] = { items: suggestions, activeIndex };
+
+  menu.innerHTML = suggestions.map((item, idx) => `
+    <div class="slash-item${idx === activeIndex ? ' active' : ''}" data-idx="${idx}">
+      <div class="slash-item-cmd">${escapeHtml(item.cmd)}</div>
+      <div class="slash-item-desc">${escapeHtml(item.desc)}</div>
+    </div>
+  `).join('');
+
+  menu.querySelectorAll('.slash-item').forEach((el) => {
+    el.addEventListener('mousedown', (e) => {
+      e.preventDefault();
+      const idx = Number.parseInt(el.dataset.idx, 10);
+      applySlashSuggestion(context, idx, input, sendBtn);
+    });
+  });
+
+  menu.classList.remove('hidden');
+}
+
+function applySlashSuggestion(context, index, input, sendBtn) {
+  const state = slashMenuState[context];
+  const item = state?.items?.[index];
+  if (!item) return;
+
+  input.value = item.insertText;
+  autoResizeTextarea(input);
+  updateSendButton(input, sendBtn);
+  hideSlashAutocomplete(context);
+  input.focus();
+}
+
+function hideSlashAutocomplete(context) {
+  const menu = document.getElementById(context === 'home' ? 'homeSlashMenu' : 'chatSlashMenu');
+  slashMenuState[context] = { items: [], activeIndex: 0 };
+  if (menu) {
+    menu.classList.add('hidden');
+    menu.innerHTML = '';
+  }
 }
 
 function generateId() {
@@ -173,7 +497,12 @@ function loadAllChats() {
 
 // Update provider UI across all dropdowns
 function updateProviderUI(provider) {
-  const providerLabel = provider === 'claude' ? 'Claude' : 'Opencode';
+  const providerLabels = {
+    claude: 'Claude',
+    opencode: 'Opencode',
+    gemini: 'Gemini'
+  };
+  const providerLabel = providerLabels[provider] || provider;
   document.querySelectorAll('.provider-selector .provider-label').forEach(l => {
     l.textContent = providerLabel;
   });
@@ -366,16 +695,18 @@ function setupEventListeners() {
   homeInput.addEventListener('input', () => {
     updateSendButton(homeInput, homeSendBtn);
     autoResizeTextarea(homeInput);
+    updateSlashAutocomplete('home');
   });
-  homeInput.addEventListener('keydown', (e) => handleKeyPress(e, homeForm));
+  homeInput.addEventListener('keydown', (e) => handleKeyPress(e, homeForm, 'home'));
 
   // Chat form
   chatForm.addEventListener('submit', handleSendMessage);
   messageInput.addEventListener('input', () => {
     updateSendButton(messageInput, chatSendBtn);
     autoResizeTextarea(messageInput);
+    updateSlashAutocomplete('chat');
   });
-  messageInput.addEventListener('keydown', (e) => handleKeyPress(e, chatForm));
+  messageInput.addEventListener('keydown', (e) => handleKeyPress(e, chatForm, 'chat'));
 
   // Right sidebar toggle
   sidebarToggle.addEventListener('click', toggleSidebar);
@@ -399,16 +730,39 @@ function setupEventListeners() {
   // Setup dropdowns
   setupDropdowns();
 
-  // Close dropdowns when clicking outside
+  // Close dropdowns and slash autocomplete when clicking outside
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.dropdown-container')) {
       document.querySelectorAll('.dropdown-container.open').forEach(d => d.classList.remove('open'));
+    }
+    if (!e.target.closest('.input-wrapper')) {
+      hideSlashAutocomplete('home');
+      hideSlashAutocomplete('chat');
     }
   });
 }
 
 // Setup dropdown functionality
 function setupDropdowns() {
+  // Skills & MCP dropdown toggles
+  ['homeSkillsDropdown', 'chatSkillsDropdown', 'homeMcpDropdown', 'chatMcpDropdown'].forEach(id => {
+    const dropdown = document.getElementById(id);
+    if (!dropdown) return;
+    const btn = dropdown.querySelector('button');
+    if (!btn) return;
+
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeOtherDropdowns(dropdown);
+      dropdown.classList.toggle('open');
+      if (dropdown.classList.contains('open') && id.includes('Mcp')) {
+        window.electronAPI?.getMcpStatus?.().then((status) => {
+          mcpStatus = status;
+          renderMcpMenus();
+        }).catch(() => {});
+      }
+    });
+  });
   // Thinking mode toggle buttons
   ['homeThinkingBtn', 'chatThinkingBtn'].forEach(id => {
     const btn = document.getElementById(id);
@@ -536,6 +890,63 @@ function setupDropdowns() {
       dropdown.classList.remove('open');
     });
   });
+
+  // Restore saved provider and model from localStorage if present
+  try {
+    const savedProvider = localStorage.getItem('selectedProvider');
+    if (savedProvider && providerModels[savedProvider]) {
+      selectedProvider = savedProvider;
+      const providerItem = document.querySelector(`.provider-menu .dropdown-item[data-value="${savedProvider}"]`);
+      const label = providerItem?.querySelector('.item-label')?.textContent || (savedProvider === 'gemini' ? 'Gemini' : savedProvider);
+      document.querySelectorAll('.provider-selector .provider-label').forEach(l => {
+        l.textContent = label;
+      });
+      document.querySelectorAll('.provider-menu .dropdown-item').forEach(i => {
+        const isSelected = i.dataset.value === savedProvider;
+        i.classList.toggle('selected', isSelected);
+        let checkIcon = i.querySelector('.check-icon');
+        if (isSelected && !checkIcon) {
+          const itemRow = i.querySelector('.item-row');
+          if (itemRow) {
+            checkIcon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            checkIcon.setAttribute('class', 'check-icon');
+            checkIcon.setAttribute('viewBox', '0 0 24 24');
+            checkIcon.setAttribute('fill', 'none');
+            checkIcon.setAttribute('stroke', 'currentColor');
+            checkIcon.setAttribute('stroke-width', '2');
+            checkIcon.innerHTML = '<polyline points="20 6 9 17 4 12"></polyline>';
+            itemRow.appendChild(checkIcon);
+          }
+        }
+        if (checkIcon) {
+          checkIcon.style.display = isSelected ? 'block' : 'none';
+        }
+      });
+
+      updateModelDropdowns(savedProvider);
+
+      const savedModel = localStorage.getItem('selectedModel');
+      if (savedModel && (providerModels[savedProvider] || []).some(m => m.value === savedModel)) {
+        selectedModel = savedModel;
+        const modelObj = providerModels[savedProvider].find(m => m.value === savedModel);
+        if (modelObj) {
+          document.querySelectorAll('.model-selector .model-label').forEach(l => {
+            l.textContent = modelObj.label;
+          });
+          document.querySelectorAll('.model-menu .dropdown-item').forEach(i => {
+            const isSelected = i.dataset.value === savedModel;
+            i.classList.toggle('selected', isSelected);
+            const checkIcon = i.querySelector('.check-icon');
+            if (checkIcon) {
+              checkIcon.style.display = isSelected ? 'block' : 'none';
+            }
+          });
+        }
+      }
+    }
+  } catch (err) {
+    console.warn('[Dropdowns] Could not restore saved provider/model:', err);
+  }
 }
 
 // Update model dropdowns based on selected provider
@@ -745,7 +1156,41 @@ async function stopCurrentQuery() {
 }
 
 // Handle key press
-function handleKeyPress(e, form) {
+function handleKeyPress(e, form, context) {
+  const state = context ? slashMenuState[context] : null;
+  if (state && state.items.length > 0) {
+    const input = context === 'home' ? homeInput : messageInput;
+    const sendBtn = context === 'home' ? homeSendBtn : chatSendBtn;
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      state.activeIndex = (state.activeIndex + 1) % state.items.length;
+      updateSlashAutocomplete(context);
+      return;
+    }
+    if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      state.activeIndex = (state.activeIndex - 1 + state.items.length) % state.items.length;
+      updateSlashAutocomplete(context);
+      return;
+    }
+    if (e.key === 'Tab' || (e.key === 'Enter' && !e.shiftKey)) {
+      const selected = state.items[state.activeIndex];
+      if (e.key === 'Enter' && selected && input.value === selected.insertText) {
+        hideSlashAutocomplete(context);
+      } else {
+        e.preventDefault();
+        applySlashSuggestion(context, state.activeIndex, input, sendBtn);
+        return;
+      }
+    }
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      hideSlashAutocomplete(context);
+      return;
+    }
+  }
+
   if (e.key === 'Enter' && !e.shiftKey) {
     e.preventDefault();
     form.dispatchEvent(new Event('submit'));
@@ -786,6 +1231,9 @@ async function handleSendMessage(e) {
   if (!message) {
     return;
   }
+
+  hideSlashAutocomplete('home');
+  hideSlashAutocomplete('chat');
 
   if (isFirstMessage) {
     // Always generate a new ID for a new conversation
@@ -886,6 +1334,11 @@ async function handleSendMessage(e) {
 
             if (data.type === 'done') {
               break;
+            } else if (data.type === 'error') {
+              const loadingIndicator = contentDiv.querySelector('.loading-indicator');
+              if (loadingIndicator) loadingIndicator.remove();
+              hasContent = true;
+              appendToContent(contentDiv, `⚠️ **Error:** ${data.message || 'Error al procesar la solicitud'}`);
             } else if (data.type === 'text' && data.content) {
               if (!hasContent) {
                 const loadingIndicator = contentDiv.querySelector('.loading-indicator');

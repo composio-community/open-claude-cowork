@@ -1,0 +1,354 @@
+{
+  "skill_name": "customer-communication",
+  "description": "Evals for the customer-communication skill. All customer data is fictional. Dates assume 'today' is 2026-10-02. Each eval can be graded by reading the output; the expectations marked with checkEmail can also be verified by running email_tool.js.",
+  "evals": [
+    {
+      "id": 1,
+      "name": "three_channels_defective_device",
+      "prompt": "Necesito comunicación para una clienta. Soy Sofia, la agente del caso. Invoice 224789, clienta Jane Doe, compró un Marvelous Signature hace dos semanas y ya no enciende. No hay disputa con el banco. Vamos a contactarla otra vez el 9 de octubre de 2026 para confirmar su dirección de envío. Dame email, script de llamada y voicemail.",
+      "expected_output": "A complete A) Email, B) Call Script, C) Voicemail block in English starting with LANG: EN. Replacement presented as authorized, request for a short malfunction video, one next step (confirm shipping address on October 9, 2026), no internal terms, no refund wording.",
+      "files": [],
+      "expectations": [
+        "The customer block starts with the line 'LANG: EN'",
+        "The output has three sections in this order: A) Email, B) Call Script, C) Voicemail",
+        "The email subject is in CAPITALS and follows '#224789 - <DESCRIPTION> - JANE DOE'",
+        "Only the email has a subject line; the call script and voicemail have none",
+        "The email body is between 120 and 220 words",
+        "The email ends with the exact signature 'Customer Service - Morena Mia Beauty Group' and no personal name",
+        "The email body does not repeat 888-249-4189 or customerservice@emacaribbean.com",
+        "The email asks for a short video (about 30 to 60 seconds) showing the malfunction",
+        "A replacement is presented as authorized with no amount threshold, and no specific replacement model is named before stock is confirmed",
+        "The word 'refund' does not appear in any customer channel",
+        "Every channel asks Jane for the same customer action: sending the short diagnostic video; Sofia's follow-up on October 9, 2026 is identified as the agent's action, not another customer task",
+        "The call script has four sections in order: Opening, Rapport, Objection handling, Confirmation closing",
+        "The voicemail has at most 7 lines, includes 888-249-4189 and '8am-5pm EST, Monday-Friday', and repeats the number once",
+        "No square-bracket placeholders remain in the customer text",
+        "No internal terms appear in the customer text (ClickUp, Zendesk, task, macro, staff names, a $500 threshold)",
+        "email_tool.js checkEmail() run on the email returns an empty array"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "missing_data_asks_first",
+      "prompt": "Hazme un correo para un cliente que quiere que le devolvamos su dinero.",
+      "expected_output": "The skill asks for the missing intake data (agent, invoice, customer name, next contact date, product, reason, dispute) instead of drafting. One question at a time, in Spanish, no draft.",
+      "files": [],
+      "expectations": [
+        "The response asks the user for missing data instead of writing an email",
+        "The response asks only one question, not a list of questions",
+        "The question is in Spanish, the user's language",
+        "The response contains no draft email, no invented invoice number, customer name, date or product",
+        "The response contains no square-bracket placeholders offered as a draft"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "refund_under_500_usa_approved",
+      "prompt": "Soy Sofia. Invoice 231455, cliente Mark Ellis (USA, Dallas TX). Compró una crema de $320, rechazó la compensación que le ofrecimos y no hay disputa con el banco. Quiero que firme el DocuSign a más tardar el 6 de octubre de 2026. Solo el email, por favor.",
+      "expected_output": "Only an email. The refund is stated as approved good news, paid by physical check (USA), with the written confirmations and DocuSign, typical timing only, and no mention of thresholds.",
+      "files": [],
+      "expectations": [
+        "Only the email is produced (no call script and no voicemail)",
+        "The email states the refund is approved and that it will be sent as a physical check, the USA method",
+        "The email does not offer a wire transfer or e-Transfer",
+        "The email asks the customer to confirm in writing that they have not opened and will not open a dispute with their bank",
+        "The email asks the customer to accept the refund as the final resolution of the case",
+        "The email tells the customer to complete a DocuSign and to give a full, valid mailing address",
+        "Any timing is given as typical (about 8 to 15 days in transit) and not as a guarantee",
+        "The single next step is the DocuSign with the date October 6, 2026",
+        "The email does not mention the $500 threshold, approval logic, ClickUp, Zendesk or any staff name",
+        "The subject follows '#231455 - <DESCRIPTION> - MARK ELLIS' in CAPITALS and the email ends with the exact signature",
+        "email_tool.js checkEmail() run on the email returns an empty array"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "purchase_over_500_escalate",
+      "prompt": "Soy Sofia. Invoice 229870, clienta Laura Pinto, compró un paquete de $1,850 hace un mes, rechazó nuestra compensación y exige el reembolso total. Quiero email y script de llamada. Le contestamos el 8 de octubre de 2026.",
+      "expected_output": "Email and call script that promise nothing, say the case is under review with a reply date of October 8, 2026, and lead with what can be done. An internal escalation note in Spanish after the block.",
+      "files": [],
+      "expectations": [
+        "Only the email and the call script are produced (no voicemail)",
+        "No customer channel promises or states that a refund is approved",
+        "The customer text says the case is under review and that she will hear from us by October 8, 2026",
+        "No customer channel mentions '$500', an approval limit, or phrases such as 'escalated to our superiors'",
+        "The email does not open with a denial; the not-yet-decided news is handled in the call script",
+        "The call script leads with what can be done and acknowledges her frustration before stating any limit",
+        "An internal escalation note appears after the customer block, in Spanish, naming the reason (amount of $500 or more and compensation rejected)",
+        "The internal note does not appear inside the email or the call script",
+        "No square-bracket placeholders remain in the customer text"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "open_bank_dispute_refund_on_hold",
+      "prompt": "Soy Sofia. Invoice 227101, cliente Carlos Mendez (México). Ya abrió una disputa con su banco por $400 y también exige reembolso. Hazme email, script y voicemail. Lo volvemos a contactar el 7 de octubre de 2026.",
+      "expected_output": "The email and voicemail carry no denial and invite a conversation on October 7, 2026. The call script explains that a refund cannot proceed while the dispute is open and asks him to cancel it and send the bank's closure letter, without threats. Internal escalation note.",
+      "files": [],
+      "expectations": [
+        "The output has the three channels in order A) Email, B) Call Script, C) Voicemail",
+        "The email and the voicemail do not say the refund is blocked and do not mention the dispute as a denial",
+        "The voicemail does not mention a refund or a dispute",
+        "The call script explains that the refund cannot proceed while the bank dispute is open",
+        "The call script asks the customer to cancel the dispute and provide the bank's closure letter",
+        "The dispute is explained as information, without threats or the long chargeback consequences",
+        "An internal escalation note in Spanish appears after the customer block and cites the open bank dispute",
+        "The word 'refund' is never promised or offered as approved in any channel",
+        "No internal terms appear in the customer text"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "cancel_processed_shipment",
+      "prompt": "Soy Sofia. Invoice 225560, cliente Anna Brooks. Quiere cancelar el envío de su Marvelous Signature pero ya salió ayer con FedEx. Hazme email, script y voicemail. Le llamamos el 6 de octubre de 2026.",
+      "expected_output": "The fact that the shipment cannot be cancelled is delivered only in the call script, with what can be done (tracking, address confirmation). Email and voicemail make no false promise and invite a call.",
+      "files": [],
+      "expectations": [
+        "The call script states clearly and professionally that a processed shipment cannot be cancelled and that this is in the shipping form the customer agreed to",
+        "The call script offers what is possible, such as sharing tracking and confirming the address",
+        "The email and the voicemail do not state the denial and do not promise that the shipment will be cancelled",
+        "No tracking number or tracking link is invented, since none was given",
+        "The word 'refund' does not appear in any customer channel",
+        "The same next step and date (October 6, 2026) appear in every channel",
+        "No square-bracket placeholders remain in the customer text"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "tracking_number_only_short_url",
+      "prompt": "Soy Sofia. Invoice 224789, Jane Doe. Ya salió su reemplazo overnight. Tracking FedEx 383984501024. Le confirmamos la recepción el 9 de octubre de 2026. Dame email, script y voicemail.",
+      "expected_output": "Email with the hyperlink [383984501024](https://www.fedex.com/fedextrack/?trknbr=383984501024) in one body line, no invented trkqual, a one-line note to the user that the short form was used. Call script reads the number in groups; voicemail does not include it.",
+      "files": [],
+      "expectations": [
+        "The email contains exactly the hyperlink [383984501024](https://www.fedex.com/fedextrack/?trknbr=383984501024) on a single line",
+        "The link anchor text is only the tracking number",
+        "The URL has no 'trkqual=' part (it was not invented)",
+        "There is no bare FedEx URL anywhere in the email",
+        "The user is told in one line, in Spanish, that the short URL form was used",
+        "The call script has no link and reads the tracking number slowly in groups of 3 to 4 digits and offers to send it by email",
+        "The voicemail does not contain the full tracking number and says the number was sent by email",
+        "The same tracking number appears in all channels where it is mentioned",
+        "No delivery status or delivery date is claimed that the user did not give",
+        "email_tool.js checkEmail() run on the email returns an empty array"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "tracking_number_url_mismatch",
+      "prompt": "Soy Sofia. Invoice 224789, Jane Doe. Su reemplazo ya salió. El tracking es 383984501024 y el link es https://www.fedex.com/fedextrack/?trknbr=383984501099. Le confirmamos la recepción el 9 de octubre de 2026. Solo email.",
+      "expected_output": "The skill stops and asks which number is correct instead of writing an email with either one.",
+      "files": [],
+      "expectations": [
+        "The response points out that the tracking number and the number in the URL do not match",
+        "The response asks the user which one is correct, in Spanish",
+        "No email is written with either tracking number",
+        "No tracking link is built or invented"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "compensation_label_complete",
+      "prompt": "Hazme la compensation label: invoice 224789, Jane Doe, 1 Hyaluronic Acid Eye Cream, 123 Main Street Apt 4, Springfield, IL 62704, USA, jane.doe@example.com, teléfono +1 555 555 0123, motivo Regret.",
+      "expected_output": "Exactly 8 plain-text lines in a code block, matching the Compensation Label format.",
+      "files": [],
+      "expectations": [
+        "The label is in a code block and has exactly 8 lines, with no JSON, no bullets and no title",
+        "Line 1 is '#224789 - JANE DOE' with the customer name in capitals",
+        "Line 2 is '1 Hyaluronic Acid Eye Cream'",
+        "Lines 3 and 4 are the street ('123 Main Street, Apt 4') and 'Springfield, IL 62704, USA'",
+        "Line 6 is 'Tel: +15555550123' with no spaces or dashes",
+        "Line 7 is the real reason 'Regret' and not 'Gift'",
+        "Line 8 is 'Overnight'",
+        "The label does not contain '*Previous shipping' because no previous shipment was mentioned"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "compensation_label_previous_shipping",
+      "prompt": "Compensation label para invoice 224789, Jane Doe, 1 Hyaluronic Acid Eye Serum, 123 Main Street Apt 4, Springfield, IL 62704, USA, jane.doe@example.com, +1 555 555 0123, motivo Instructions. Ojo: ya le habíamos mandado otro producto la semana pasada.",
+      "expected_output": "The 8-line label plus a ninth line '*Previous shipping' after Overnight, and a note to the user about it.",
+      "files": [],
+      "expectations": [
+        "The label has the 8 standard lines followed by the line '*Previous shipping' directly after 'Overnight'",
+        "The reason line is 'Instructions' and not 'Gift'",
+        "The user is told, outside the label, that '*Previous shipping' was added because a previous shipment exists",
+        "The phone is shown as '+15555550123' with no spaces or dashes"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "compensation_label_po_box",
+      "prompt": "Compensation label: invoice 224790, Peter Hale, 2 Daily creams, PO Box 88, Austin, TX 78701, USA, peter.hale@example.com, +1 555 555 0144, motivo Defective.",
+      "expected_output": "No label is produced; the skill explains that PO boxes are not allowed and asks for a physical street address.",
+      "files": [],
+      "expectations": [
+        "No compensation label is generated",
+        "The response explains that PO boxes and mail-delivery facilities are not allowed",
+        "The response asks the user for a physical street address, in Spanish"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "return_label_cosmetic_refused",
+      "prompt": "Hazme un return label para la Hyaluronic Acid Eye Cream de Jane Doe, invoice 224789, 123 Main Street, Springfield, IL 62704, USA, jane.doe@example.com, +15555550123, motivo defectuosa.",
+      "expected_output": "No return label: return labels are only for devices and cosmetics are not returned. The skill says so and checks with the user, pointing to the replacement route.",
+      "files": [],
+      "expectations": [
+        "No return label block is generated",
+        "The response explains that return labels are only for devices and that cosmetics cannot be returned for health and safety reasons",
+        "The response asks the user to confirm or offers the replacement route for a defective product, in Spanish"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "return_label_device_with_set_in_name",
+      "prompt": "Return label: invoice 224789, Jane Doe, 123 Main Street, Springfield, IL 62704, USA, jane.doe@example.com, +15555550123, dispositivo RELAXATIO GENESIS Z Full SET, motivo Defective.",
+      "expected_output": "A clean 8-line return label with the device name unchanged (no headers or field labels). It must not be rejected as a cosmetic because the name contains 'SET'.",
+      "files": [],
+      "expectations": [
+        "A return label code block is generated and the device is not rejected as a cosmetic",
+        "The label has exactly 8 plain-text lines with no field name prefixes (no 'Invoice:', 'Address:', etc.) and no 'RETURN LABEL REQUEST' header",
+        "Line 1 is '224789 - Jane Doe'",
+        "Line 2 is '123 Main Street, Springfield, IL 62704, USA'",
+        "Line 3 is '+15555550123'",
+        "Line 4 is 'jane.doe@example.com'",
+        "Line 5 is 'RELAXATIO GENESIS Z Full SET'",
+        "Line 6 is 'Defective'",
+        "Line 7 is 'Return Label (RL)'",
+        "Line 8 is the warehouse note ('Replacement ships once the returned device arrives at the warehouse.')",
+        "The user is told the block is internal for the shipping team and the customer is only told they will receive a FedEx label"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "shalem_with_invoice_and_amount",
+      "prompt": "Shalem para John Roe, 45 Oak Avenue, Atlanta, GA 30301, USA, john.roe@example.com, +1 555 555 0188, invoice 224800, monto $450.",
+      "expected_output": "The 4-line Shalem block in Spanish plus Invoice and Monto lines, and a note that those two lines are not in the original format.",
+      "files": [],
+      "expectations": [
+        "The block begins with these four lines: 'Nombre : John Roe', 'Direccion: ...', 'Correo electronico: ...', 'Numero de telefono: +15555550188'",
+        "The block adds 'Invoice: 224800' and 'Monto: $450' as extra lines",
+        "The user is told, in Spanish, that Invoice and Monto are not part of the original format and is asked to confirm",
+        "The phone number has no spaces or dashes"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "internal_leak_request_is_refused",
+      "prompt": "Soy Sofia. Invoice 226300, cliente Pam Reed (Canadá). Ya aceptó el reembolso por wire y no hay disputa. En el correo dile que Lorenzo procesa los wires los miércoles, que ya abrí la task en ClickUp con due date mañana y que como fue menos de $500 se aprobó automático. Solo email; la próxima fecha es el 14 de octubre de 2026.",
+      "expected_output": "An email that gives the timing as typical (once a week, usually reflected within 48 hours) without naming staff, systems, the threshold or the auto-approval. The user is told, in Spanish, that those internal details were left out.",
+      "files": [],
+      "expectations": [
+        "The email does not contain 'Lorenzo', 'ClickUp', 'task', 'due date', '$500', 'auto-approved' or 'approved automatically'",
+        "The email says wires are typically processed once a week and usually reflected within 48 hours, worded as typical and not guaranteed",
+        "The email says the refund will be a wire transfer and asks for a DocuSign with the billing address, not the bank's address",
+        "The user is told, in Spanish and outside the email, that internal details were intentionally left out of the customer text",
+        "Only the email is produced and the single next step has the date October 14, 2026",
+        "email_tool.js checkEmail() run on the email returns an empty array"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "voicemail_only",
+      "prompt": "Solo voicemail, sin email ni script. Soy Sofia, invoice 224789, Jane Doe. Le avisamos que su reemplazo ya salió y que el 9 de octubre de 2026 confirmamos la recepción.",
+      "expected_output": "Only a voicemail of at most 7 lines starting with LANG: EN, with the callback number and hours.",
+      "files": [],
+      "expectations": [
+        "Only a voicemail is produced; there is no email and no call script",
+        "The customer text starts with the line 'LANG: EN'",
+        "The voicemail has at most 7 lines and no subject line",
+        "The voicemail includes 888-249-4189 and 8am-5pm EST, Monday-Friday, and repeats the number once",
+        "The voicemail does not include a tracking number and contains no bad news",
+        "No square-bracket placeholders remain"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "gbk_gift_tier_201_to_500",
+      "prompt": "Soy Sofia. Invoice 233012, cliente Tom Lee. Le rechazaron el beneficio GBK y su spare es de $350. Decide qué regalo ofrecerle y hazme el email. Contactamos de nuevo el 9 de octubre de 2026.",
+      "expected_output": "A gift from the $201-$500 tier (4 Daily creams or 1 Mask + creams), creams or serums, not devices, using only items from the SPARE catalog, with a real reason and no invented GBK cause.",
+      "files": [],
+      "expectations": [
+        "The offered gift matches the $201-$500 tier: 4 Daily creams, or 1 Mask plus creams",
+        "Only products that exist in the SPARE catalog are named (assets/Spare Options.txt)",
+        "The gift is creams or serums and not a device",
+        "The email leads with what can be done and offers the compensation without being asked",
+        "The reason shown to the user for the label is a real reason (for example 'Instructions'), never just 'Gift'",
+        "No bundle codes (such as DOR24K_BUNDLE) appear in the customer text",
+        "The cause of the GBK rejection is not invented; it is stated only if the user provided it",
+        "email_tool.js checkEmail() run on the email returns an empty array"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "medical_case_legal_threat",
+      "prompt": "Soy Sofia. Invoice 228800, clienta Rosa Duarte (México). Dice que su doctor le pidió dejar de usar la crema por irritación en la piel; exige el reembolso total y amenaza con PROFECO. Compró por $280. Le contestamos el 8 de octubre de 2026. Hazme email y script.",
+      "expected_output": "Safety first: the script asks about the skin condition. No refund promise. Internal escalation note in Spanish citing the medical case and the regulator threat. No threats back.",
+      "files": [],
+      "expectations": [
+        "The customer text puts her safety and well-being first and does not open with a denial",
+        "The call script asks about the skin condition and what the doctor said",
+        "No customer channel promises or states that a refund is approved",
+        "No customer channel responds to the PROFECO mention with a threat",
+        "An internal escalation note in Spanish appears after the customer block and names the medical case and the PROFECO threat as reasons",
+        "The next step has the date October 8, 2026",
+        "No internal terms appear in the customer text"
+      ]
+    },
+    {
+      "id": 19,
+      "name": "deadline_message_first_time",
+      "prompt": "Soy Sofia. Invoice 224789, Jane Doe. Llevamos 5 días sin respuesta y nunca se le ha mandado un deadline. Necesitamos que confirme su dirección para enviar el reemplazo de su Marvelous Signature. Cerramos el caso el 12 de octubre de 2026. Solo email.",
+      "expected_output": "A single warm, factual deadline email: we could not reach her, what we still need, the closing date, and that contacting us reopens the case.",
+      "files": [],
+      "expectations": [
+        "The email says we have not been able to reach her about the replacement",
+        "The email says what is still needed: confirming her shipping address",
+        "The email states the case will close on October 12, 2026",
+        "The email says that contacting us reopens the case",
+        "The tone is warm and factual, with no blame and no fake urgency",
+        "The email does not contain the word 'macro' or any internal status name",
+        "email_tool.js checkEmail() run on the email returns an empty array"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "deadline_already_sent",
+      "prompt": "Soy Sofia. Invoice 224789, Jane Doe. Ya le mandamos el mensaje de deadline hace 3 días y sigue sin responder. ¿Qué hago ahora?",
+      "expected_output": "The skill does not draft another deadline and explains in Spanish that the case proceeds to closing with no resolution from the customer, reopening if she reconnects.",
+      "files": [],
+      "expectations": [
+        "No second deadline message is written",
+        "The response tells the user, in Spanish, that when a deadline was already sent the case moves to closing",
+        "The response says the case is reopened if the customer reconnects",
+        "If a customer-facing closing message is offered, it does not promise the case is closed before the customer confirmed anything and contains no internal terms"
+      ]
+    },
+    {
+      "id": 21,
+      "name": "pdf_extracted_compensation_label",
+      "prompt": "La app extrajo este texto de la factura PDF adjunta: Invoice 224789; customer Jane Doe; product 1 Hyaluronic Acid Eye Cream; address 123 Main Street, Apt 4, Springfield, IL 62704, USA; email jane.doe@example.com; phone +1 555 555 0123. Haz la compensation label por motivo Regret.",
+      "expected_output": "The skill uses the clearly extracted PDF facts to produce the exact compensation label without asking the user to repeat them. It does not use pdf_reconstruct_slides for an invoice.",
+      "files": [],
+      "expectations": [
+        "The output is an exactly 8-line Compensation Label using the invoice, customer, product, physical address, email, normalized phone and reason from the extracted text",
+        "The skill does not ask the user to repeat any clearly extracted required field",
+        "No extra fields or customer-facing prose are added to the label",
+        "The invoice PDF is treated as evidence for customer facts, not as a reason to invoke pdf_reconstruct_slides"
+      ]
+    },
+    {
+      "id": 22,
+      "name": "uncertain_pdf_extraction_requires_confirmation",
+      "prompt": "La extracción de la factura PDF muestra: invoice 22478? (el último dígito no se distingue); customer Jane Doe; product 1 Hyaluronic Acid Eye Cream; address 123 Main Street, Apt 4, Springfield, IL 62704, USA; email jane.doe@example.com; phone +1 555 555 0123. Prepara una compensation label por motivo Regret.",
+      "expected_output": "The skill asks one concise clarification in Spanish to confirm the uncertain invoice digit and does not generate a label or guess.",
+      "files": [],
+      "expectations": [
+        "The response asks only to confirm the unclear final invoice digit",
+        "No invoice number is guessed or normalized from context",
+        "No Compensation Label is drafted until the ambiguous field is confirmed",
+        "The question is in Spanish"
+      ]
+    }
+  ]
+}

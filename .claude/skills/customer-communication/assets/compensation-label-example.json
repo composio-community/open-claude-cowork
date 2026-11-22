@@ -1,0 +1,12 @@
+{
+  "invoice": "224789",
+  "customer": "Jane Doe",
+  "product": "1 Hyaluronic Acid Eye Cream",
+  "street": "123 Main Street, Apt 4",
+  "city_state_zip": "Springfield, IL 62704, USA",
+  "email": "jane.doe@example.com",
+  "phone": "+15555550123",
+  "reason": "Regret",
+  "shipping": "Overnight",
+  "previous_shipping": false
+}

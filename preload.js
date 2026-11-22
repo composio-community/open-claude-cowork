@@ -1,6 +1,6 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
-const SERVER_URL = 'http://localhost:3001';
+const SERVER_URL = process.env.BACKEND_URL || 'http://localhost:3001';
 
 // Store the current abort controller for cancelling requests
 let currentAbortController = null;
@@ -113,6 +113,79 @@ contextBridge.exposeInMainWorld('electronAPI', {
     } catch (error) {
       console.error('[PRELOAD] Error fetching providers:', error);
       return { providers: ['claude'], default: 'claude' };
+    }
+  },
+
+  // Get available skills from backend
+  getSkills: async () => {
+    try {
+      const response = await fetch(`${SERVER_URL}/api/skills`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return await response.json();
+    } catch (error) {
+      console.error('[PRELOAD] Error fetching skills:', error);
+      return { success: false, skills: [], error: error.message };
+    }
+  },
+
+  // Get specific skill content
+  getSkillContent: async (skillId) => {
+    try {
+      const response = await fetch(`${SERVER_URL}/api/skills/${encodeURIComponent(skillId)}`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return await response.json();
+    } catch (error) {
+      console.error('[PRELOAD] Error fetching skill content:', error);
+      return { success: false, error: error.message };
+    }
+  },
+
+  // Direct Brave search context query
+  searchBrave: async (query, options = {}) => {
+    try {
+      const response = await fetch(`${SERVER_URL}/api/search`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ q: query, count: options.count || 10, search_lang: options.search_lang || 'es' })
+      });
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return await response.json();
+    } catch (error) {
+      console.error('[PRELOAD] Error querying Brave Search:', error);
+      return { success: false, error: error.message };
+    }
+  },
+
+  // Get MCP servers status
+  getMcpStatus: async () => {
+    try {
+      const response = await fetch(`${SERVER_URL}/api/mcp/status`);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return await response.json();
+    } catch (error) {
+      console.error('[PRELOAD] Error fetching MCP status:', error);
+      return { clickup: { configured: false }, brave: { configured: false } };
+    }
+  },
+
+  // Disconnect ClickUp OAuth
+  disconnectClickUp: async () => {
+    try {
+      const response = await fetch(`${SERVER_URL}/api/auth/clickup/disconnect`, {
+        method: 'POST'
+      });
+      return await response.json();
+    } catch (error) {
+      console.error('[PRELOAD] Error disconnecting ClickUp:', error);
+      return { success: false, error: error.message };
     }
   }
 });

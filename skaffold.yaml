@@ -1,0 +1,20 @@
+apiVersion: skaffold/v4beta11
+kind: Config
+metadata:
+  name: open-claude-cowork
+build:
+  artifacts:
+    - image: open-claude-cowork
+      context: .
+      docker:
+        dockerfile: Dockerfile
+manifests:
+  rawYaml:
+    - cloudrun-service.yaml
+deploy:
+  cloudrun: {}
+portForward:
+  - resourceType: service
+    resourceName: open-claude-cowork
+    port: 8080
+    localPort: 8080

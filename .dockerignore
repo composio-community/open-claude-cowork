@@ -1,0 +1,25 @@
+# Dependencies
+node_modules
+server/node_modules
+npm-debug.log*
+
+# Secrets & local runtime configs (injected at runtime, never baked into image)
+.env
+.env.*
+!.env.example
+server/opencode.json
+
+# Git & IDE metadata
+.git
+.gitignore
+.github
+.vscode
+.idea
+
+# Desktop-only artifacts & media
+assets
+*.mp4
+*.mov
+*.dmg
+*.exe
+*.AppImage

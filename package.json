@@ -5,7 +5,13 @@
   "scripts": {
     "dev": "NODE_ENV=development electron .",
     "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "web": "node server/server.js",
+    "docker:build": "docker build -t open-claude-cowork:local .",
+    "docker:up": "docker compose up --build",
+    "docker:down": "docker compose down",
+    "cloudrun:emulate": "gcloud beta code dev --service-config=cloudrun-service.yaml",
+    "cloudrun:deploy": "gcloud run deploy open-claude-cowork --source . --port 8080 --allow-unauthenticated",
+    "test": "node --test"
   },
   "author": "",
   "license": "ISC",

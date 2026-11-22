@@ -1,10 +1,12 @@
 import { ClaudeProvider } from './claude-provider.js';
 import { OpencodeProvider } from './opencode-provider.js';
+import { GeminiProvider } from './gemini-provider.js';
 
 // Provider registry
 const providers = {
   claude: ClaudeProvider,
-  opencode: OpencodeProvider
+  opencode: OpencodeProvider,
+  gemini: GeminiProvider
 };
 
 // Provider instance cache
@@ -69,6 +71,11 @@ export async function clearProviderCache() {
 }
 
 export async function initializeProviders() {
+  if (process.env.ENABLE_OPENCODE !== 'true') {
+    console.log('[Providers] Skipping eager Opencode startup (lazy-initialized on demand; set ENABLE_OPENCODE=true to pre-start).');
+    return;
+  }
+
   console.log('[Providers] Initializing providers...');
   try {
     // Get and initialize opencode provider
@@ -83,4 +90,5 @@ export async function initializeProviders() {
 // Export classes for direct use
 export { ClaudeProvider } from './claude-provider.js';
 export { OpencodeProvider } from './opencode-provider.js';
+export { GeminiProvider } from './gemini-provider.js';
 export { BaseProvider } from './base-provider.js';

@@ -143,3 +143,5 @@ vite.config.ts.timestamp-*
 .DS_Store
 # Auto-generated at runtime by server.js (contains live MCP API key)
 server/opencode.json
+server/.clickup-token.json
+server/.clickup-client.json

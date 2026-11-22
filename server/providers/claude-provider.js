@@ -1,5 +1,11 @@
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { query } from '@anthropic-ai/claude-agent-sdk';
 import { BaseProvider } from './base-provider.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const projectRoot = path.resolve(__dirname, '../..');
 
 /**
  * Claude Agent SDK provider implementation
@@ -8,10 +14,11 @@ import { BaseProvider } from './base-provider.js';
 export class ClaudeProvider extends BaseProvider {
   constructor(config = {}) {
     super(config);
-    // Default allowed tools - matches server.js
+    // Default allowed tools - matches server.js and includes MCP tools
     this.defaultAllowedTools = config.allowedTools || [
       'Read', 'Write', 'Edit', 'Bash', 'Glob', 'Grep',
-      'WebSearch', 'WebFetch', 'TodoWrite', 'Skill'
+      'WebSearch', 'WebFetch', 'TodoWrite', 'Skill',
+      'mcp__*'
     ];
     this.defaultMaxTurns = config.maxTurns || 20;
     this.permissionMode = config.permissionMode || 'bypassPermissions';
@@ -54,18 +61,32 @@ export class ClaudeProvider extends BaseProvider {
       prompt,
       chatId,
       mcpServers = {},
+      model = null,
       allowedTools = this.defaultAllowedTools,
       maxTurns = this.defaultMaxTurns
     } = params;
 
-    // Build query options - exact match to server.js structure
+    // Create abort controller for this request
+    const abortController = new AbortController();
+    if (chatId) {
+      this.abortControllers.set(chatId, abortController);
+    }
+
+    // Build query options for @anthropic-ai/claude-agent-sdk
     const queryOptions = {
+      cwd: projectRoot,
+      abortController,
       allowedTools,
       maxTurns,
       mcpServers,
       permissionMode: this.permissionMode,
+      allowDangerouslySkipPermissions: this.permissionMode === 'bypassPermissions',
       settingSources: ['user', 'project']  // Enable Skills from filesystem
     };
+
+    if (model) {
+      queryOptions.model = model;
+    }
 
     // Check for existing session - matches server.js session resumption logic
     const existingSessionId = chatId ? this.getSession(chatId) : null;
@@ -79,18 +100,11 @@ export class ClaudeProvider extends BaseProvider {
 
     console.log('[Claude] Calling Claude Agent SDK...');
 
-    // Create abort controller for this request
-    const abortController = new AbortController();
-    if (chatId) {
-      this.abortControllers.set(chatId, abortController);
-    }
-
     try {
     // Stream responses from Claude Agent SDK - matches server.js exactly
     for await (const chunk of query({
       prompt,
-      options: queryOptions,
-      abortSignal: abortController.signal
+      options: queryOptions
     })) {
       // Debug: log all system messages to find session_id
       if (chunk.type === 'system') {

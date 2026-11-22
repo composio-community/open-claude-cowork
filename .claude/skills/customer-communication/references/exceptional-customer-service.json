@@ -1,0 +1,1530 @@
+{
+  "metadata": {
+    "title": "Exceptional Customer Service: Exceed Customer Expectations to Build Loyalty and Boost Profits",
+    "edition": "2nd Edition",
+    "authors": ["Lisa Ford", "David McNair", "William Perry"],
+    "foreword_by": "Tony Hsieh, CEO of Zappos.com",
+    "publisher": "Adams Business, an imprint of Adams Media, an imprint of Simon & Schuster, Inc.",
+    "copyright": "2009, 2001 by Lisa Ford, David McNair, William Perry",
+    "isbn_10": "1-60550-038-0",
+    "isbn_13_paperback": "978-1-60550-038-6",
+    "isbn_13_epub": "978-1-44050-435-8",
+    "knowledge_domain": "Customer Service Excellence, Customer Experience Management, Business Strategy",
+    "purpose": "A how-to guidebook with steps, tips, and exercises for changing service attitudes and behaviors at individual, team, and organizational levels."
+  },
+
+  "axioms": [
+    {
+      "id": "AX-001",
+      "name": "El cliente lo define todo",
+      "statement": "Solo hay una regla: el cliente define tu servicio. El cliente DEFINE el servicio.",
+      "implication": "No es la organización quien define la calidad del servicio, sino la percepción del cliente."
+    },
+    {
+      "id": "AX-002",
+      "name": "El cliente siempre es el CLIENTE",
+      "statement": "No 'el cliente siempre tiene razón', sino que el cliente siempre piensa que tiene razón, y esa percepción es lo que importa.",
+      "implication": "Se debe tratar la percepción del cliente como realidad, incluso cuando esté equivocado."
+    },
+    {
+      "id": "AX-003",
+      "name": "La percepción es la realidad",
+      "statement": "En el negocio de servicio al cliente, la percepción del cliente se convierte en su realidad.",
+      "implication": "No importa lo que realmente ocurrió, sino lo que el cliente percibió."
+    },
+    {
+      "id": "AX-004",
+      "name": "El servicio excepcional es atemporal",
+      "statement": "El arte de crear experiencias excepcionales para los clientes es TIMELESS (atemporal). La tecnología cambia, pero la necesidad de conexión humana permanece.",
+      "implication": "Los principios fundamentales del servicio no caducan con los avances tecnológicos."
+    },
+    {
+      "id": "AX-005",
+      "name": "No existe una bala de plata",
+      "statement": "No hay una solución mágica única para el servicio. Es la culminación de muchas pequeñas cosas, todas entregadas con una sonrisa.",
+      "implication": "El servicio excepcional es el resultado de la suma de múltiples detalles consistentes."
+    }
+  ],
+
+  "theories": [
+    {
+      "id": "TH-001",
+      "name": "Teoría de la Ecuación del Servicio",
+      "formula": "Servicio = Expectativa – Realidad",
+      "description": "El servicio se define por la interacción de dos variables: lo que esperamos y lo que realmente recibimos. Si la realidad supera la expectativa, el servicio es excepcional. Si la realidad no alcanza la expectativa, hay una 'brecha de decepción' (disappointment gap).",
+      "components": {
+        "expectativa": "Formada por factores CARE (Competencia, Publicidad, Reputación, Experiencia)",
+        "realidad": "La experiencia real vivida por el cliente",
+        "brecha_de_decepcion": "Expectativa – Realidad (cuando es positiva)"
+      },
+      "application": "Gestionar las expectativas del cliente y superar la realidad en cada interacción."
+    },
+    {
+      "id": "TH-002",
+      "name": "Teoría del Continuo de Servicio (Scattergram)",
+      "description": "Las organizaciones se clasifican en cinco categorías según su creatividad e implementación.",
+      "quadrants": [
+        {
+          "name": "Clueless",
+          "creativity": "Baja",
+          "implementation": "Baja",
+          "description": "'La luz está encendida pero no hay nadie en casa'",
+          "characteristics": "Sin rumbo, sin servicio, sin conciencia del cliente."
+        },
+        {
+          "name": "Complacents",
+          "creativity": "Baja",
+          "implementation": "Baja",
+          "description": "'¿Le puedo ayudar en algo?' (indiferentes)",
+          "characteristics": "Existen pero no ayudan ni son desagradables. 'HepYa' clan."
+        },
+        {
+          "name": "Chasers",
+          "creativity": "Baja",
+          "implementation": "Alta",
+          "description": "'Te seguiré a donde vayas' (seguidores, no líderes)",
+          "characteristics": "Implementan pero no generan ideas. Copian a la competencia."
+        },
+        {
+          "name": "Lightbulbs",
+          "creativity": "Alta",
+          "implementation": "Baja",
+          "description": "'Algún día deberíamos...' (ideas que no se implementan)",
+          "characteristics": "Generan ideas pero no las ejecutan. 'Fireflies' en lugar de bombillas duraderas."
+        },
+        {
+          "name": "Doers",
+          "creativity": "Alta",
+          "implementation": "Alta",
+          "description": "'Qué gran idea... empecemos hoy'",
+          "characteristics": "Personas y negocios de acción. Productos de planificación y capacitación."
+        },
+        {
+          "name": "Stars",
+          "creativity": "Alta",
+          "implementation": "Alta",
+          "description": "'Nadie lo hace mejor' (consistencia + innovación)",
+          "characteristics": "Generan consistentemente nuevas ideas y las implementan. Primeros en innovaciones de servicio."
+        }
+      ],
+      "application": "Identificar en qué cuadrante está la organización y trazar un plan para moverla hacia 'Doers' y 'Stars'."
+    },
+    {
+      "id": "TH-003",
+      "name": "Teoría del 90/10",
+      "description": "El 90% de las cosas que nos suceden son buenas; el 10% no lo son. Nos enfocamos en el 10% malo. Lo mismo aplica a los clientes: el 90% son buenas personas; el 10% van contra la corriente.",
+      "principle": "Enfócate en el 90% bueno.",
+      "application": "Cambiar el enfoque mental de lo negativo a lo positivo en la interacción diaria con clientes."
+    },
+    {
+      "id": "TH-004",
+      "name": "Teoría del 100/100 (Propiedad Absoluta)",
+      "description": "En lugar de dividir responsabilidades (50/50, 75/25), cada individuo debe tratar todas las situaciones como si fuera 100% responsable.",
+      "characteristics": [
+        "Sin llevar puntaje",
+        "Sin período de prueba",
+        "Sin preguntas",
+        "Es una forma de vida"
+      ],
+      "application": "Adoptar la responsabilidad total sobre cada situación de servicio, sin esperar reciprocidad."
+    },
+    {
+      "id": "TH-005",
+      "name": "Teoría de los Momentos de Verdad (Jan Carlzon)",
+      "author": "Jan Carlzon, ex presidente de Scandinavian Airlines",
+      "description": "Un 'momento de verdad' ocurre cada vez que un cliente entra en contacto con la organización y tiene la oportunidad de formarse una impresión.",
+      "examples": [
+        "Un saludo (o la falta de uno)",
+        "Un sitio web",
+        "Una exhibición de mercancía",
+        "Un baño sucio",
+        "Cómo se viste alguien",
+        "Cómo un CSR responde el teléfono"
+      ],
+      "application": "Identificar todos los momentos de verdad y hacerlos positivos en lugar de negativos."
+    },
+    {
+      "id": "TH-006",
+      "name": "Teoría de la Zona de Influencia",
+      "description": "Cada persona influye en más de 1,000 personas diariamente. La influencia se extiende por vista (30-50 pies), por sonido (10-15 pies) y por boca a boca (ilimitado).",
+      "formula": "(Personas con las que hablas + personas que pasan a 10 pies + correos + llamadas) × 5 = Zona de Influencia",
+      "application": "Ser consciente del impacto que se tiene en los demás, incluso sin interacción directa."
+    },
+    {
+      "id": "TH-007",
+      "name": "Teoría de los Tres Cs",
+      "description": "Toda experiencia de servicio se divide en tres niveles que se construyen uno sobre otro.",
+      "levels": [
+        {
+          "level": 1,
+          "name": "Competencia",
+          "description": "Nivel base. Hacer bien el trabajo central. Si no eres competente, los clientes buscan alternativas."
+        },
+        {
+          "level": 2,
+          "name": "Cortesía",
+          "description": "Nivel medio. Trato amable y respetuoso. Sin competencia, la cortesía no es suficiente."
+        },
+        {
+          "level": 3,
+          "name": "Cuidado",
+          "description": "Nivel superior. Personalización y relación genuina. Sin el tercer C, el servicio carece de personalización y conexión. Es lo que convierte una experiencia de 3-4 en 5 estrellas."
+        }
+      ],
+      "application": "Asegurar que los tres niveles estén presentes para lograr una experiencia excepcional."
+    },
+    {
+      "id": "TH-008",
+      "name": "Teoría de la Comunicación (7-38-55)",
+      "description": "En la comunicación presencial: 7% palabras, 38% tono de voz, 55% presencia física (lenguaje corporal). En teléfono: 93% tono de voz, 7% palabras.",
+      "application": "Enfocarse en el tono y el lenguaje corporal, no solo en las palabras."
+    },
+    {
+      "id": "TH-009",
+      "name": "Teoría del Costo de Retención vs. Adquisición",
+      "statistics": {
+        "costo_adquirir_vs_retener": "5-6 veces más",
+        "aumento_ganancias_por_5_porciento_retencion": "25-125%",
+        "aumento_2_porciento_retencion_equivale_a": "Reducir costos en 10%"
+      },
+      "application": "Invertir en retención de clientes es más rentable que adquirir nuevos."
+    },
+    {
+      "id": "TH-010",
+      "name": "Teoría del Marketing Imaginativo (Theodore Levitt)",
+      "author": "Theodore Levitt, libro 'The Marketing Imagination'",
+      "description": "Los productos/servicios se representan como anillos concéntricos.",
+      "rings": {
+        "inner_ring": "Genérico/commodity",
+        "middle_ring": "Lo que el cliente espera",
+        "outer_ring": "Máximo impacto potencial (el 'Yes... and then some')"
+      },
+      "application": "Buscar constantemente mover el servicio hacia el anillo exterior para crear el factor 'Wow'."
+    }
+  ],
+
+  "principles": {
+    "about_customer": [
+      {
+        "id": "PR-C-001",
+        "name": "Principio de la Indiferencia",
+        "statement": "El 68% de las veces que una empresa pierde un cliente es por una actitud de indiferencia por parte del proveedor de servicio.",
+        "source": "American Society for Quality and the Quality and Productivity Center"
+      },
+      {
+        "id": "PR-C-002",
+        "name": "Principio del Valor Percibido",
+        "statement": "Dos tercios de los clientes no se sienten valorados por quienes les sirven.",
+        "source": "Estudio de Daniel Yankelovich"
+      },
+      {
+        "id": "PR-C-003",
+        "name": "Principio de la Queja Voluntaria",
+        "statement": "Solo el 2-5% de los clientes insatisfechos se quejan voluntariamente. Por cada queja recibida, hay 96 clientes insatisfechos que se van sin decir palabra."
+      },
+      {
+        "id": "PR-C-004",
+        "name": "Principio de la Lealtad",
+        "statement": "Los clientes felices cuentan a 4-5 personas su experiencia positiva. Los insatisfechos cuentan a 9-12 personas (y quién sabe a cuántos en Internet)."
+      },
+      {
+        "id": "PR-C-005",
+        "name": "Principio del Valor del Tiempo",
+        "statement": "Los clientes son más educados, tienen mayor acceso a información y más opciones que nunca. El servicio que se consideraba excelente hace cinco años, hoy apenas es satisfactorio."
+      },
+      {
+        "id": "PR-C-006",
+        "name": "Principio de la Brecha de Expectativas",
+        "statement": "Las expectativas del cliente están en constante aumento. El nivel de servicio prestado se ha mantenido plano (ACSI: 75 en 1994, 75+ en 2008)."
+      }
+    ],
+    "about_service": [
+      {
+        "id": "PR-S-001",
+        "name": "Principio del 'Yes... and then some'",
+        "statement": "No solo manejes la transacción, construye una relación. Da lo que piden, y luego algo más."
+      },
+      {
+        "id": "PR-S-002",
+        "name": "Principio de la Recuperación del Cliente",
+        "statement": "Cuando algo sale mal, la empresa debe estar lista para hacer lo correcto. 'No me llames a mí. No estoy parado allí con el cliente. Tú tienes buen juicio. Haz lo que creas mejor.'"
+      },
+      {
+        "id": "PR-S-003",
+        "name": "Principio de la Política",
+        "statement": "Los clientes no quieren oír sobre 'política de la empresa'. Esa palabra se usa defensivamente en un enfrentamiento de servicio. Es mejor preguntar al cliente qué esperaría o qué sería justo."
+      },
+      {
+        "id": "PR-S-004",
+        "name": "Principio del Empoderamiento",
+        "statement": "Los empleados deben tener autoridad para tomar decisiones inmediatas de servicio al cliente. (Ritz-Carlton: $2,000 de autoridad de gasto por empleado)."
+      },
+      {
+        "id": "PR-S-005",
+        "name": "Principio del Gerente vs. Administrativo",
+        "statement": "Los problemas 'gerenciales' (cómo se aborda un problema) pueden ser resueltos por empleados individuales y equipos. Los problemas 'de administración' (quién aborda) son de la dirección. Más del 90% de los problemas de atención al cliente están vinculados a cuestiones gerenciales."
+      },
+      {
+        "id": "PR-S-006",
+        "name": "Principio del Sistema vs. Persona",
+        "statement": "Más del 90% de los problemas en las organizaciones son culpa de los sistemas, no de las personas. La primera acción tras una falla de servicio debe ser revisar el sistema, no buscar culpables."
+      }
+    ],
+    "about_communication": [
+      {
+        "id": "PR-COM-001",
+        "name": "Principio del Nombre",
+        "statement": "A los clientes les encanta oír su nombre. Úsalo siempre que sea posible. Mantén la formalidad (Sr., Sra., Dr.) a menos que el cliente pida que lo llames por su nombre."
+      },
+      {
+        "id": "PR-COM-002",
+        "name": "Principio de la Escucha Activa",
+        "statement": "Escuchar vs. oír. La escucha efectiva requiere atención plena. Los malos escuchas interrumpen, hablan encima o no prestan atención."
+      },
+      {
+        "id": "PR-COM-003",
+        "name": "Principio del Jargon",
+        "statement": "Evita la jerga y los acrónimos. Si tienes que usarlos, defínelos para que el cliente pueda explicárselos a alguien más después."
+      },
+      {
+        "id": "PR-COM-004",
+        "name": "Principio de la Velocidad y Estilo",
+        "statement": "Iguala la velocidad y el estilo del cliente. Si habla rápido, ajusta tu velocidad. Si usa vocabulario simple, simplifica el tuyo."
+      },
+      {
+        "id": "PR-COM-005",
+        "name": "Principio de la Empatía",
+        "statement": "La empatía es quizás el ingrediente más importante y el más carente. No se puede enseñar con un manual; debe venir de adentro."
+      },
+      {
+        "id": "PR-COM-006",
+        "name": "Principio de la Regla 10/5",
+        "statement": "Cuando pases a alguien a 10 pies, dale contacto visual y una sonrisa. A 5 pies, ofrécele un saludo personal."
+      },
+      {
+        "id": "PR-COM-007",
+        "name": "Principio ESEE",
+        "statement": "Eye contact (contacto visual), Smile (sonrisa), Engage (involucrar), with Empathy (con empatía)."
+      }
+    ],
+    "about_attitude": [
+      {
+        "id": "PR-A-001",
+        "name": "Principio del Autodiálogo",
+        "statement": "El 80% de nuestro diálogo interno es negativo. El pensamiento positivo puede no siempre funcionar, pero el pensamiento negativo casi nunca funciona."
+      },
+      {
+        "id": "PR-A-002",
+        "name": "Principio del Onstage/Offstage",
+        "statement": "Los empleados tienen un rol (onstage) cuando están frente al cliente. Necesitan un lugar para escapar (offstage) para recargarse."
+      },
+      {
+        "id": "PR-A-003",
+        "name": "Principio de la Propiedad",
+        "statement": "'No es mi trabajo' no es aceptable. Deja al cliente en mejor forma de como lo encontraste."
+      },
+      {
+        "id": "PR-A-004",
+        "name": "Principio de la Misión",
+        "statement": "Las misiones son poderosas cuando son genuinas y se sienten y actúan. Es responsabilidad del líder traducir la misión al rol de cada empleado."
+      }
+    ]
+  },
+
+  "customer_expectations": {
+    "care_factors": [
+      {
+        "factor": "Competition (Competencia)",
+        "description": "Si un competidor ofrece algo, esperamos que los demás lo sigan."
+      },
+      {
+        "factor": "Advertising (Publicidad)",
+        "description": "Millones se gastan en promover productos, creando expectativas."
+      },
+      {
+        "factor": "Reputation (Reputación)",
+        "description": "El boca a boca es la base más fuerte de las expectativas."
+      },
+      {
+        "factor": "Experience (Experiencia)",
+        "description": "Si has tratado con un negocio antes, esperas cierto nivel de calidad."
+      }
+    ],
+    "six_dimensions_of_service_quality": {
+      "source": "Service Quality Institute, Texas A&M University, reportado por Leonard J. Berry en 'Delivering Quality Service'",
+      "dimensions": [
+        {
+          "id": "SQ-001",
+          "name": "Confiabilidad (Reliability)",
+          "description": "Consistencia y cumplimiento. ¿Pueden los clientes confiar en ti? Es el ticket de entrada a la arena competitiva."
+        },
+        {
+          "id": "SQ-002",
+          "name": "Capacidad de Respuesta (Responsiveness)",
+          "description": "Estar sintonizado con las necesidades del cliente y actuar para satisfacerlas, incluso anticiparlas antes de que las pidan."
+        },
+        {
+          "id": "SQ-003",
+          "name": "Sentirse Valorado (Feeling Valued)",
+          "description": "Los clientes quieren sentir que son importantes, no un número."
+        },
+        {
+          "id": "SQ-004",
+          "name": "Empatía (Empathy)",
+          "description": "Ponerte en el lugar del cliente. Es la herramienta más carente en el arsenal de los asociados de servicio."
+        },
+        {
+          "id": "SQ-005",
+          "name": "Competencia (Competency)",
+          "description": "Lo básico. ¿El producto o servicio cumple con los requisitos? ¿Funciona como se anuncia?"
+        },
+        {
+          "id": "SQ-006",
+          "name": "Tratar con Una Sola Persona (Dealing with One Person)",
+          "description": "Los clientes no quieren ser pasados de persona en persona. Quieren una sola voz que se haga cargo del problema."
+        }
+      ]
+    }
+  },
+
+  "why_customers_get_upset": [
+    {
+      "id": "WCU-001",
+      "reason": "No obtuvieron lo que esperaban.",
+      "solution": "Elevar la calidad del producto/servicio o asegurarse de que el cliente sepa de antemano qué esperar."
+    },
+    {
+      "id": "WCU-002",
+      "reason": "Alguien fue grosero.",
+      "solution": "La grosería percibida es suficiente. La percepción es la realidad. Capacitar en empatía y profesionalismo."
+    },
+    {
+      "id": "WCU-003",
+      "reason": "Alguien fue indiferente.",
+      "solution": "Hacer que los asociados se sientan parte del equipo y darles autoridad y apoyo para marcar la diferencia."
+    },
+    {
+      "id": "WCU-004",
+      "reason": "Nadie escuchó.",
+      "solution": "Escuchar con empatía y hacer algo con la retroalimentación."
+    }
+  ],
+
+  "dealing_with_difficult_customers": {
+    "five_step_strategy": [
+      {
+        "step": 1,
+        "name": "Mantente calmado",
+        "technique": "STOP",
+        "details": {
+          "S": "Signal: Reconoce tus primeras señales de enojo (mandíbula tensa, corazón acelerado, palmas sudorosas).",
+          "T": "Take control: Toma control.",
+          "O": "Opposite: Haz lo opuesto a tu señal de advertencia (bebe agua, respira profundo).",
+          "P": "Practice: Practica."
+        }
+      },
+      {
+        "step": 2,
+        "name": "Deja que el cliente se desahogue",
+        "details": "Escucha sin interrumpir. Usa el 'poder de la pluma' (toma notas). El cliente se calmará al ver que tomas nota."
+      },
+      {
+        "step": 3,
+        "name": "Maneja la emoción primero",
+        "details": "No pases a la lógica hasta que la ira y la frustración se hayan disipado. El cerebro no procesa lógica hasta que la emoción se pone a un lado. Muestra empatía, encuentra áreas de acuerdo, reformula, agradece."
+      },
+      {
+        "step": 4,
+        "name": "Evita palabras detonantes",
+        "triggers_vs_calmers": [
+          {"trigger": "Policy", "calmer": "Here's what we can do"},
+          {"trigger": "Can't", "calmer": "Can"},
+          {"trigger": "No", "calmer": "Sorry/I understand"},
+          {"trigger": "I don't know", "calmer": "I can find out"},
+          {"trigger": "But", "calmer": "And"},
+          {"trigger": "You should have", "calmer": "What others have found helpful"},
+          {"trigger": "The only thing we can do", "calmer": "A good option for you is"}
+        ]
+      },
+      {
+        "step": 5,
+        "name": "Retrasa la acción o consulta una segunda opinión",
+        "details": "Llama a un tiempo fuera. 'Quiero darle la mejor solución. Déjeme investigar esto y me pondré en contacto en unos minutos.' Consulta con un líder o gerente."
+      }
+    ],
+    "customer_recovery_skills": [
+      "Agradece que vengan a ti y escúchalos con gran empatía.",
+      "Asume la responsabilidad de arreglar el problema. No culpes ni pongas excusas.",
+      "Resuelve el problema rápidamente.",
+      "Involucra al cliente en la solución.",
+      "Haz algo extra (reconoce el 'factor de molestia').",
+      "Discúlpate al final (no al principio).",
+      "Haz seguimiento."
+    ],
+    "delivering_bad_news": [
+      "Informa al cliente lo antes posible. 'Las malas noticias son como un pescado muerto. Solo empeoran con el tiempo.'",
+      "Informa en persona o por teléfono, no por carta o correo electrónico.",
+      "Ve al grano rápidamente: 'No te va a gustar oír esto'.",
+      "Trata al cliente con justicia. Se recordará.",
+      "Discúlpate sinceramente.",
+      "Pide otra oportunidad para servirles en el futuro.",
+      "No dejes que afecte tu interacción con el siguiente cliente."
+    ]
+  },
+
+  "customer_feedback": {
+    "abcd_method": {
+      "A": {
+        "name": "Ask (Pregunta)",
+        "description": "Solicita retroalimentación formal e informalmente. Puede ser en persona, por correo, por teléfono, por correo electrónico o por sitio web."
+      },
+      "B": {
+        "name": "Believe (Cree)",
+        "description": "Cree lo que te dicen. No descartes las críticas ni busques excusas."
+      },
+      "C": {
+        "name": "Communicate (Comunica)",
+        "description": "Comparte los resultados, buenos y malos. Compártelos creativamente."
+      },
+      "D": {
+        "name": "Do (Haz)",
+        "description": "Haz algo con lo que has aprendido. Ordena las prioridades y comienza un plan de ataque."
+      }
+    },
+    "feedback_tools": {
+      "quantitative": [
+        "Telephone surveys",
+        "Mailed questionnaires",
+        "Business reply cards (counter top or product insert)",
+        "Personal interviews",
+        "Touch-tone phone surveys at call centers",
+        "Internet questionnaires"
+      ],
+      "qualitative": [
+        "Focus groups/customer forums",
+        "Internet chat lines",
+        "Mystery shoppers and teleshoppers",
+        "Employee observations"
+      ]
+    },
+    "net_promoter_score": {
+      "question": "¿Nos recomendarías a un amigo o colega?",
+      "scale": "0-10",
+      "categories": {
+        "promoters": "9-10",
+        "passives": "7-8",
+        "detractors": "0-6"
+      },
+      "calculation": "Net Promoter Score = % Promotores – % Detractores",
+      "source": "Fred Reichheld, www.netpromoter.com"
+    },
+    "key_statistics": {
+      "queja_voluntaria": "2-5% de los clientes insatisfechos se quejan voluntariamente",
+      "clientes_silenciosos": "Por cada queja, 96 clientes insatisfechos se van sin decir palabra"
+    }
+  },
+
+  "telephone_skills": {
+    "four_stages": [
+      {
+        "stage": 1,
+        "name": "Saludo (Greeting)",
+        "principles": [
+          "Las 3 P: Pleasant (agradable), Professional (profesional), Positive (positivo)",
+          "Sonríe. Pueden oírlo.",
+          "Habla claro. Enuncia tu saludo.",
+          "Responde al cliente por su nombre.",
+          "Verifica tu estado de ánimo, energía y actitud.",
+          "Evalúa el estado de ánimo del cliente.",
+          "Reacciona con sensibilidad.",
+          "Empatiza con su necesidad de llamar."
+        ]
+      },
+      {
+        "stage": 2,
+        "name": "Recopilación (Gathering)",
+        "principles": [
+          "Estar listo para escuchar.",
+          "Estar listo para tomar notas.",
+          "Mostrar que estás escuchando (silencio atento y palabras atentas).",
+          "Hacer preguntas.",
+          "Reformular lo que dijo el cliente."
+        ]
+      },
+      {
+        "stage": 3,
+        "name": "Respuesta (Responding)",
+        "options": [
+          "Responder la pregunta o resolver el problema inmediatamente.",
+          "Poner al cliente en espera y buscar una respuesta rápida.",
+          "Consultar a un líder o gerente."
+        ],
+        "hold_tips": [
+          "Pide permiso. '¿Me permite esperar?'",
+          "Sé específico con el tiempo estimado.",
+          "Espera la respuesta antes de presionar el botón.",
+          "No dejes a alguien en espera más de 45 segundos sin una actualización.",
+          "'Gracias por esperar' cada vez que regreses."
+        ]
+      },
+      {
+        "stage": 4,
+        "name": "Renovación (Renewal)",
+        "principles": [
+          "Sé personal, no programado.",
+          "Evita cierres estándar.",
+          "Pregunta si necesita algo más.",
+          "Repite tu nombre.",
+          "Agradece el negocio del cliente."
+        ]
+      }
+    ],
+    "transferring_calls": {
+      "dos": [
+        "Di lo que puedes hacer, no lo que no puedes.",
+        "Evita la palabra 'transferir'. Di 'déjeme conectarle con María'.",
+        "Informa a tu compañero antes de pasar la llamada."
+      ],
+      "donts": [
+        "No 'tires' al cliente al buzón de voz de otra persona.",
+        "No transfieras más de una vez.",
+        "Si no puedes ayudar después de dos intentos, toma el número y devuelve la llamada."
+      ]
+    }
+  },
+
+  "technology_and_ecommerce": {
+    "principles": [
+      {
+        "id": "TECH-001",
+        "name": "Principio del Alto-Tech, Alto-Touch",
+        "statement": "La tecnología, sin importar cuán rápida, sofisticada o eficiente, sigue dependiendo de las personas para su éxito."
+      },
+      {
+        "id": "TECH-002",
+        "name": "Principio del Enhancer vs. Inhibitor",
+        "statement": "La tecnología puede mejorar o inhibir la experiencia del cliente. El desafío es usarla para mejorar."
+      },
+      {
+        "id": "TECH-003",
+        "name": "Principio de la E-Image",
+        "statement": "El sitio web debe tener la mirada, el sentimiento y la calidad de imagen consistentes con la organización."
+      },
+      {
+        "id": "TECH-004",
+        "name": "Principio del Soporte Tecnológico",
+        "statement": "Las empresas cometen el error de actualizar tecnología sin proporcionar el soporte (capacitación, personal) necesario."
+      }
+    ],
+    "website_considerations": [
+      "¿El diseño del sitio web refleja tu imagen?",
+      "¿Pueden los navegantes contactarte fácilmente?",
+      "¿Se actualiza regularmente el sitio?",
+      "¿Hay oportunidades para que el cliente interactúe?",
+      "¿Preguntas al cliente sobre sus percepciones/satisfacción?",
+      "¿Tienes salas de chat para diálogo instantáneo?",
+      "¿Con qué rapidez se responden las consultas por correo electrónico?",
+      "¿Envías correos de confirmación de pedido y de envío?",
+      "¿Ayudas a dirigir a sitios relacionados?",
+      "¿Aseguras la seguridad e integridad del sitio?"
+    ],
+    "statistics": {
+      "internet_users_worldwide": "1.3 mil millones",
+      "broadband_homes_us": "90 millones",
+      "adults_surf_web": "72%",
+      "online_advertising_2007": "$26 mil millones",
+      "online_advertising_2008_percent": "10% de todos los gastos publicitarios en EE.UU.",
+      "retail_travel_online_2008": "Cerca de $250 mil millones en EE.UU."
+    }
+  },
+
+  "service_star": {
+    "characteristics": [
+      {
+        "id": "SS-001",
+        "name": "Motivación para Servir",
+        "description": "Pasión genuina por ayudar a otros. Sienten satisfacción y recompensa personal al servir."
+      },
+      {
+        "id": "SS-002",
+        "name": "Flexibilidad",
+        "description": "Capacidad de adaptarse y superar situaciones negativas. 'Hacer limonada de limones'."
+      },
+      {
+        "id": "SS-003",
+        "name": "Energía y Entusiasmo",
+        "description": "Radiar energía que contagia a los demás. Si no tienes energía y entusiasmo, ¡cambia tu mente y obtenlos!"
+      },
+      {
+        "id": "SS-004",
+        "name": "Propiedad (Ownership)",
+        "description": "Tomar posesión de clientes, situaciones y problemas. Usar cada bit del poder y la autoridad que se les ha dado."
+      }
+    ],
+    "habits": [
+      {
+        "id": "HAB-001",
+        "name": "Be Consistent (Ser Consistente)",
+        "description": "Los Service Stars son consistentes en cómo entregan el servicio."
+      },
+      {
+        "id": "HAB-002",
+        "name": "Be Creative (Ser Creativo)",
+        "description": "La creatividad paga en servicio y rentabilidad."
+      },
+      {
+        "id": "HAB-003",
+        "name": "Love What You Do (Ama lo que Haces)",
+        "description": "A los clientes no se les puede engañar; saben si disfrutas tu trabajo."
+      },
+      {
+        "id": "HAB-004",
+        "name": "Pay Attention to Details (Presta Atención a los Detalles)",
+        "description": "Para los clientes, todo es 'grande'."
+      },
+      {
+        "id": "HAB-005",
+        "name": "Love Change, Chaos, and Surprise (Ama el Cambio, el Caos y la Sorpresa)",
+        "description": "Los Service Stars prosperan con el cambio."
+      },
+      {
+        "id": "HAB-006",
+        "name": "Recharge Yourself (Recárgate)",
+        "description": "Mantener equilibrio entre trabajo, familia y ocio."
+      }
+    ],
+    "career_advancement": [
+      {
+        "id": "CA-001",
+        "name": "La Solución del 1%",
+        "description": "'¿Cómo puedo ser 1% mejor hoy en la prestación de un servicio excepcional que ayer?' Pequeñas mejoras incrementales son más fáciles de lograr que grandes mejoras revolucionarias."
+      },
+      {
+        "id": "CA-002",
+        "name": "Buscar Tendencias",
+        "description": "Si cuatro clientes se quejan de algo en un corto período, puede haber un problema de proceso."
+      },
+      {
+        "id": "CA-003",
+        "name": "Tomar la Iniciativa",
+        "description": "Hacer cosas sin que te lo pidan."
+      },
+      {
+        "id": "CA-004",
+        "name": "Ser Curioso",
+        "description": "Conocer la organización por dentro y por fuera."
+      }
+    ]
+  },
+
+  "team_building": {
+    "tips": [
+      {
+        "id": "TEAM-001",
+        "name": "Ofrecer Estímulo",
+        "description": "La atención al cliente es un trabajo diario. El estrés y el agotamiento son peligros constantes. No participes en sesiones de queja."
+      },
+      {
+        "id": "TEAM-002",
+        "name": "Brainstorming de Soluciones",
+        "description": "Trae problemas al equipo. Comparte tanto fracasos como éxitos."
+      },
+      {
+        "id": "TEAM-003",
+        "name": "Aprender como Equipo",
+        "description": "Reserva 10-15 minutos de cada reunión para aprender algo nuevo."
+      },
+      {
+        "id": "TEAM-004",
+        "name": "Discutir Nuevas Políticas y Procedimientos",
+        "description": "Anticipa reacciones del cliente y cómo explicar los cambios."
+      },
+      {
+        "id": "TEAM-005",
+        "name": "Identificar Áreas de Mejora",
+        "description": "Eres los ojos y oídos de la organización."
+      }
+    ]
+  },
+
+  "training": {
+    "principles": [
+      "La capacitación es una inversión, no un costo.",
+      "La capacitación debe ser continua. No es un evento único.",
+      "La capacitación debe ser divertida, interactiva y desafiante.",
+      "El ROI de la capacitación: reducción de rotación, aumento de ventas, mayor productividad."
+    ],
+    "examples": [
+      {
+        "company": "Lands' End",
+        "investment": "75 horas de capacitación inicial antes de responder la primera llamada."
+      },
+      {
+        "company": "FedEx",
+        "investment": "5 semanas de capacitación, cursos de actualización cada 4 meses."
+      },
+      {
+        "company": "Ritz-Carlton",
+        "investment": "$2,700-$3,500 por empleado. Rotación 40% por debajo del estándar de la industria."
+      },
+      {
+        "company": "Zappos",
+        "investment": "3 semanas de capacitación, manual de 156 páginas escrito por empleados."
+      },
+      {
+        "company": "Target",
+        "investment": "Target University. Redujo rotación de 89% a 59%."
+      }
+    ]
+  },
+
+  "recognition_and_reward": {
+    "principles": [
+      "Las personas repiten el comportamiento que se recompensa.",
+      "El reconocimiento es poderoso tanto formal como informalmente."
+    ],
+    "tips": [
+      "Sé específico.",
+      "No subestimes las pequeñas recompensas.",
+      "Sé oportuno.",
+      "Sé sincero.",
+      "Cuando sea apropiado, hazlo público y divertido."
+    ],
+    "statistics": {
+      "empleados_que_valoran_sentirse_valorados": "86%",
+      "empleados_que_se_sienten_valorados": "37%"
+    }
+  },
+
+  "listening_skills": {
+    "five_steps": [
+      {
+        "step": 1,
+        "name": "Estar listo para escuchar",
+        "description": "Enfócate en el cliente. Elimina el ruido interno (autodiálogo) y externo (distracciones)."
+      },
+      {
+        "step": 2,
+        "name": "Hacer las preguntas correctas",
+        "description": "Preguntas abiertas (para explorar) y cerradas (para detalles específicos)."
+      },
+      {
+        "step": 3,
+        "name": "Tomar notas",
+        "description": "No confíes en tu memoria. Escucha palabras y frases clave."
+      },
+      {
+        "step": 4,
+        "name": "Mostrar que estás escuchando",
+        "description": "Silencio atento (contacto visual, asentimientos) y palabras atentas ('ya veo', 'entiendo')."
+      },
+      {
+        "step": 5,
+        "name": "Reformular",
+        "description": "Repite lo que escuchaste en tus propias palabras. Escucha 'alrededor de los bordes' (emoción, tono)."
+      }
+    ]
+  },
+
+  "first_impressions": {
+    "principles": [
+      "Los clientes forman impresiones rápidamente. Se forman docenas de impresiones sobre un negocio y sus empleados en los primeros minutos.",
+      "Las primeras impresiones comienzan antes de lo que piensas. Incluyen: llamada telefónica, señalización, estacionamiento, fácil acceso, etc.",
+      "Los 'momentos de verdad' (Jan Carlzon) ocurren en cada punto de contacto.",
+      "Las 'manchas de café' son puntos de impresión negativa que hacen que los clientes se vayan."
+    ],
+    "management_tool": {
+      "name": "First Impression Management",
+      "description": "Usando un equipo de asociados, identificar tantas cosas como sea posible que puedan estar contribuyendo a malas primeras impresiones. Para cada impresión negativa, listar una acción para eliminarla."
+    }
+  },
+
+  "positive_attitude": {
+    "principles": [
+      "El autodiálogo negativo puede hacer o deshacer cómo te sientes sobre ti mismo, tu día y tus clientes.",
+      "La Regla 90/10: Enfócate en el 90% de clientes que son buenos.",
+      "Usa tus descansos sabiamente: No los uses para quejarte. Camina, lee, escucha música, come algo.",
+      "Anclas: Ten algo en tu escritorio que evoque buenos sentimientos.",
+      "Cuídate: Come bien, haz ejercicio, ten un pasatiempo.",
+      "Trae tu sentido del humor."
+    ],
+    "break_ideas": [
+      "Tomar un paseo.",
+      "Leer una revista o libro.",
+      "Escuchar música relajante o edificante.",
+      "Comer un refrigerio (chocolate o fruta — es tu conciencia).",
+      "Tomar tiempo para un pasatiempo (de crucigramas a bordado).",
+      "Jugar cartas o un juego de mesa.",
+      "Escribir una carta a un amigo, familiar o alguien en tu organización a quien admiras."
+    ]
+  },
+
+  "empowerment": {
+    "principles": [
+      "El empoderamiento es dar a los empleados la autoridad para tomar decisiones.",
+      "Ritz-Carlton: $2,000 de autoridad de gasto para 'mover el cielo y la tierra'.",
+      "Marriott: Paquete 'Sweet Dreams' para clientes con dificultades.",
+      "Lincoln Contractors Supply: Una regla para toda la fuerza laboral: 'Empodera a tu gente para tomar decisiones decisivas e inmediatas de servicio al cliente'."
+    ]
+  },
+
+  "service_ethics": [
+    "El servicio se entrega desde el corazón y a menudo llega al corazón.",
+    "El dinero es una transacción de mercado; el servicio es una relación.",
+    "No se puede pagar lo suficiente a un asociado de servicio verdaderamente excepcional.",
+    "El servicio verdadero es de persona a persona."
+  ],
+
+  "competitiveness": [
+    {
+      "id": "COMP-001",
+      "statement": "La atención al cliente es cuestión de supervivencia. No es solo servicio, es competitividad, rentabilidad y supervivencia empresarial."
+    },
+    {
+      "id": "COMP-002",
+      "statement": "El diferenciador ganador ya no es el producto o el precio, sino el nivel de compromiso del cliente en relación con la competencia. (Rama Ramaswami, EIU)"
+    },
+    {
+      "id": "COMP-003",
+      "statement": "Ocho de cada diez ejecutivos creen que sus empresas pierden ventas cada año debido a la falla en crear compromiso con el cliente."
+    },
+    {
+      "id": "COMP-004",
+      "statement": "El 80% de las empresas creen que ofrecen una 'experiencia superior', pero solo el 8% de sus clientes está de acuerdo. (Bain & Company)"
+    }
+  ],
+
+  "policy_principles": [
+    "Los clientes no quieren oír sobre 'política de la empresa'.",
+    "La palabra 'política' se usa defensivamente en un enfrentamiento de servicio.",
+    "Es mejor preguntar al cliente qué esperaría o qué sería justo.",
+    "Las políticas deben ser guías, no camisas de fuerza."
+  ],
+
+  "measurement": {
+    "principles": [
+      "'En Dios confiamos; todos los demás traen datos.' (W. Edwards Deming)",
+      "La toma de decisiones basada en datos es superior a las corazonadas e intuición."
+    ],
+    "methods": [
+      "Mystery shoppers y teleshoppers",
+      "Tarjetas de comentarios en la tienda",
+      "Llamadas de seguimiento",
+      "Encuestas de satisfacción del cliente",
+      "Encuestas de clientes perdidos",
+      "Encuestas de empleados"
+    ]
+  },
+
+  "online_service": [
+    "Los clientes pueden irse de un sitio web más rápido que de tu puerta.",
+    "El acceso a la competencia está a un clic de distancia.",
+    "Un sitio web efectivo debe ser una extensión del negocio, con la misma imagen y calidad.",
+    "Debe ser interactivo, comunicativo y actualizado regularmente."
+  ],
+
+  "organizational_culture": [
+    "La cultura debe comenzar desde arriba y permear toda la organización.",
+    "Si aciertas con la cultura, lo demás (gran servicio, gran marca) sucederá naturalmente. (Tony Hsieh, Zappos)",
+    "El servicio excepcional proviene de nuestra gente y de tu gente.",
+    "Se necesita un fuerte respaldo: cultura de servicio, capacitación, tecnología y sistemas que empoderen."
+  ],
+
+  "aphorisms": [
+    "Es un GRAN día en Gerald's Tires!",
+    "No hay tal cosa como un mal perro, solo un mal dueño. (Barbara Woodhouse)",
+    "No es el problema, es cómo lo manejas.",
+    "El cliente no podría importarle menos quién tiene la culpa, solo qué.",
+    "Si no puedes complacer a tus clientes actuales, no mereces nuevos. (Scott Cook, Intuit)",
+    "'No es mi trabajo' no corta la mostaza.",
+    "Deja al cliente en mejor forma de como lo encontraste.",
+    "Sonríe. Pueden oírlo.",
+    "Las malas noticias son como un pescado muerto. Solo empeoran con el tiempo.",
+    "La atención al cliente es un maratón, no un sprint."
+  ],
+
+  "key_statistics": {
+    "clientes_que_se_van_por_indiferencia": "68%",
+    "clientes_insatisfechos_que_se_quejan": "2-5%",
+    "clientes_insatisfechos_que_se_van_sin_quejarse": "96%",
+    "costo_adquirir_vs_retener": "5-6 veces más",
+    "aumento_ganancias_por_5_porciento_retencion": "25-125%",
+    "personas_que_cuentan_experiencia_positiva": "4-5",
+    "personas_que_cuentan_experiencia_negativa": "9-12",
+    "clientes_que_no_se_sienten_valorados": "2/3",
+    "empresas_que_creen_dar_experiencia_superior": "80%",
+    "clientes_que_estan_de_acuerdo": "8%",
+    "ejecutivos_que_creen_perder_ventas_por_falta_de_engagement": "8/10",
+    "solicitudes_de_servicio_que_sienten_que_el_cliente_estorba": "15%",
+    "empleados_que_se_sienten_valorados": "37%",
+    "empleados_que_dicen_que_sentirse_valorados_es_importante": "86%",
+    "satisfaccion_del_cliente_en_eeuu_acsi": "75/100"
+  },
+
+  "exercises": [
+    {
+      "id": "EX-001",
+      "name": "How Fit Is Your Organization?",
+      "duration": "20 minutos por ejercicio",
+      "steps": [
+        "Haz una lista de los puntos de contacto con el cliente dentro de tu organización.",
+        "Cada miembro debe monitorear/observar o revisar un punto de contacto y tomar notas sobre cómo ese contacto podría haber sido más centrado en el cliente.",
+        "Trae las observaciones a la próxima reunión de equipo. Comparte dos o tres ejemplos y recomendaciones.",
+        "Vota por las mejores ideas y ve qué puedes hacer para implementar los cambios necesarios."
+      ]
+    },
+    {
+      "id": "EX-002",
+      "name": "Shooting for the Stars",
+      "duration": "15 minutos",
+      "steps": [
+        "Individualmente, cada miembro debe tomar dos minutos y listar algunas actividades o atributos de tu equipo u organización que son Complacents.",
+        "Ahora toma otros tres minutos para listar actividades o atributos Doers.",
+        "Como grupo, tomen diez minutos para que los miembros describan los elementos de su lista.",
+        "Discutan cómo algunos elementos Complacents pueden cambiarse o mejorarse para moverlos al cuadro Doer.",
+        "Trabajando como equipo, tomen diez minutos para hacer brainstorming de oportunidades/ideas que podrían mover a tu organización al cuadro Star.",
+        "Una vez que hayan listado las ideas, tomen cinco minutos y voten por las mejores ideas.",
+        "Finalmente, tomando quince minutos, expandan sobre formas realistas en que las ideas de Service Star pueden implementarse."
+      ]
+    },
+    {
+      "id": "EX-003",
+      "name": "Mapping the Gaps",
+      "duration": "15 minutos",
+      "description": "Mapping the Gaps es una forma de evaluar dónde estás versus dónde crees que deberías estar. Para cada área se te pide calificar el desempeño de tu empresa según las afirmaciones proporcionadas.",
+      "ranking_scale": {
+        "1-3": "You must Be Joking",
+        "4-7": "maybe on a Good Day",
+        "8-10": "Proud to say that's us"
+      },
+      "categories": [
+        "The Hiring Process",
+        "Training",
+        "Performance Review, Recognition, and Reward",
+        "Policies & Procedures",
+        "Technology",
+        "Other Support Operations"
+      ]
+    },
+    {
+      "id": "EX-004",
+      "name": "Charting L'attitudes",
+      "description": "Haz esto para diez a veinte contactos al día durante al menos dos semanas. Después de cada contacto con el cliente, ambos cara a cara y por teléfono, pon una marca en la fila que mejor se aplique a la actitud del cliente al principio y al final de tu contacto.",
+      "legend": {
+        "+": "customer very satisfied and happy",
+        "=": "customer OK, problem resolved",
+        "-": "customer was not satisfied and/or frustrated"
+      }
+    },
+    {
+      "id": "EX-005",
+      "name": "The One Percent Solution",
+      "duration": "20 minutos",
+      "description": "Reflexiona sobre tus últimos cinco encuentros con clientes (en persona o por teléfono). Piensa en cómo manejaste cada situación, luego intenta identificar y escribir algo que podrías haber hecho para mejorar tu respuesta en un 1%."
+    },
+    {
+      "id": "EX-006",
+      "name": "Evaluating Your Telephone Technique",
+      "description": "Dale este formulario a un compañero de trabajo o líder de equipo y pídeles que lo completen mientras monitorean tu técnica telefónica. Después de que la llamada termine, pídeles que revisen el formulario de evaluación contigo.",
+      "criteria": [
+        "Greeting: Proper Greeting, Professional, Positive, Empathetic",
+        "Gathering: Readiness, Listening Skill, Key Fact Find",
+        "Review/Respond: Restate Need, Offer Assistance",
+        "Renewal: Resolution, Step Up, Thank You, Proper Close"
+      ],
+      "rating_scale": {
+        "E": "Exceptional",
+        "A": "Above Average",
+        "MS": "Meets Standard",
+        "NI": "Needs Improvement",
+        "U": "Unacceptable"
+      }
+    },
+    {
+      "id": "EX-007",
+      "name": "I've Got Your Number",
+      "duration": "15 minutos",
+      "description": "Diseña tu propio formulario de mystery shop. Hazlo un formulario simple que se relacione con el tipo de negocio que haces.",
+      "questions": [
+        "¿Fui recibido de una manera cálida y acogedora que me hizo sentir especial?",
+        "¿El empleado se presentó?",
+        "Después de decir mi nombre, ¿el empleado usó mi nombre?",
+        "¿El empleado escuchó bien lo que necesitaba?",
+        "¿El empleado tenía conocimiento sobre los productos/servicios?",
+        "¿El empleado usó buen contacto visual?",
+        "¿La apariencia del empleado era profesional/apropiada?",
+        "¿El lenguaje corporal del empleado indicaba entusiasmo e interés?",
+        "¿El tono del empleado era sincero/empático/profesional?",
+        "¿El empleado añadió a tu experiencia de servicio?",
+        "¿Te sentiste valorado como cliente?",
+        "¿Recomendarías a este empleado para contratar en tu negocio?"
+      ]
+    }
+  ],
+
+  "tools": {
+    "scattergram": {
+      "name": "Scattergram de Servicio",
+      "axes": {
+        "x": "Implementation (Implementación)",
+        "y": "Creativity (Creatividad)"
+      },
+      "quadrants": [
+        {"name": "Complacents", "position": "bottom-left"},
+        {"name": "Chasers", "position": "bottom-right"},
+        {"name": "Lightbulbs", "position": "top-left"},
+        {"name": "Doers", "position": "top-right"},
+        {"name": "Stars", "position": "arrow through center"}
+      ],
+      "usage": "Categorizar actividades y atributos de tu empresa, tu competencia y tu trabajo personal."
+    },
+    "report_card": {
+      "name": "Report Card de Servicio",
+      "areas": [
+        "Our facilities",
+        "Appearance of our people",
+        "Service attitude of our people",
+        "Our treatment of one another"
+      ],
+      "grading": "A, B, C, D, F",
+      "usage": "Designar áreas clave de la organización y su entrega de servicio, y hacer que los grupos de empleados completen las boletas de calificaciones."
+    },
+    "telephone_log": {
+      "name": "Registro de Llamadas Telefónicas",
+      "fields": [
+        "Customer Name",
+        "Internal/External",
+        "Contact #",
+        "Other Contact",
+        "Notes",
+        "Referred to",
+        "Follow-up Needed"
+      ]
+    },
+    "mystery_shop_form": {
+      "name": "Formulario de Mystery Shop",
+      "usage": "Evaluar el servicio de otros negocios para aprender y mejorar el propio."
+    }
+  },
+
+  "company_examples": [
+    {
+      "company": "Gerald's Tires",
+      "industry": "Tire and brake store",
+      "location": "Charleston, South Carolina",
+      "employees": "Just over 70",
+      "locations": "6",
+      "key_practices": [
+        "Prueba de personalidad para todos los empleados",
+        "Guión telefónico flexible",
+        "Prohibición de la palabra 'política'",
+        "Recuperación del cliente: 'Haz lo que creas mejor'",
+        "Mystery shoppers y teleshoppers",
+        "Tarjetas de comentarios en la tienda",
+        "Llamadas de seguimiento",
+        "Una rosa a cada clienta",
+        "Áreas de juego en las salas de espera",
+        "Reparación gratuita de llantas pinchadas"
+      ]
+    },
+    {
+      "company": "Chick-fil-A",
+      "industry": "Fast food",
+      "key_practices": [
+        "Contratación cuidadosa y orientación",
+        "Estándares de servicio rígidamente aplicados",
+        "Generosos programas de beneficios para empleados"
+      ]
+    },
+    {
+      "company": "Lincoln Contractors Supply",
+      "industry": "Contractors' tools and equipment",
+      "location": "Milwaukee, Wisconsin",
+      "key_practices": [
+        "Filosofía de negocio 'Customer for Life'",
+        "Showrooms grandes y limpios con 20,000 artículos",
+        "Cookies en la mañana, pretzels en la tarde, café y té",
+        "Máquina de refrescos de 25 centavos",
+        "Gatorade en verano",
+        "Una regla: 'Empodera a tu gente para tomar decisiones decisivas e inmediatas de servicio al cliente'"
+      ]
+    },
+    {
+      "company": "Ritz-Carlton",
+      "industry": "Hotels",
+      "key_practices": [
+        "$2,000 de autoridad de gasto por empleado",
+        "Credo, 20 Basics",
+        "Cultura de 'damas y caballeros sirviendo a damas y caballeros'",
+        "Cualquier asociado que escucha una queja es dueño de esa queja hasta que se resuelva"
+      ]
+    },
+    {
+      "company": "Zappos.com",
+      "industry": "Online shoe retailer",
+      "key_practices": [
+        "3 semanas de capacitación en servicio al cliente",
+        "Manual de 156 páginas sobre la cultura de la empresa escrito por empleados",
+        "Visión a largo plazo: la mejor atención al cliente y la mejor experiencia del cliente",
+        "Envío gratis en ambos sentidos, política de devolución de 365 días",
+        "La prioridad número uno es la cultura de la empresa"
+      ]
+    },
+    {
+      "company": "Lands' End",
+      "industry": "Retail clothing",
+      "key_practices": [
+        "75 horas de capacitación inicial antes de responder la primera llamada",
+        "Programa 'Smart Service' (2007)",
+        "Modelo personal en el sitio web"
+      ]
+    },
+    {
+      "company": "FedEx",
+      "industry": "Shipping",
+      "key_practices": [
+        "5 semanas de capacitación",
+        "Cursos de actualización cada 4 meses"
+      ]
+    },
+    {
+      "company": "Target",
+      "industry": "Discount retail",
+      "key_practices": [
+        "Target University",
+        "Reducción de rotación de 89% a 59%",
+        "Juegos de roles con personajes como Bad Mouth Betty y Hysterical Harold"
+      ]
+    },
+    {
+      "company": "Southwest Airlines",
+      "industry": "Airlines",
+      "key_practices": [
+        "Herb Kelleher disfrazado de Elvis",
+        "Contests regulares",
+        "Cultura de servicio personal",
+        "Relaciones personales con los clientes"
+      ]
+    },
+    {
+      "company": "Marriott Hotels",
+      "industry": "Hotels",
+      "key_practices": [
+        "Paquete 'Sweet Dreams'",
+        "Reuniones diarias de equipo con 'basics of the day'",
+        "Motto: 'Si nos cuidamos unos a otros, podremos cuidar mejor a nuestros huéspedes'"
+      ]
+    },
+    {
+      "company": "Premier Valley Bank",
+      "industry": "Banking",
+      "location": "Fresno",
+      "key_practices": [
+        "No hay líneas, ventanillas de cajeros o gran vestíbulo",
+        "Los clientes se sientan en el escritorio de uno de los Business Bankers",
+        "Servicio de mensajería para recoger depósitos y hacer cambios"
+      ]
+    },
+    {
+      "company": "Commerce Bank",
+      "industry": "Banking",
+      "key_practices": [
+        "Abierto 7 días a la semana con horario nocturno",
+        "Ventana de depósito abierta hasta después de medianoche los viernes",
+        "Abierto 10 minutos antes y 10 minutos después del horario establecido"
+      ]
+    },
+    {
+      "company": "Jansport",
+      "industry": "Outdoor supplies",
+      "key_practices": [
+        "Garantía de por vida",
+        "Postales personalizadas del 'Warranty Service Camp'",
+        "Comunicación personalizada basada en base de datos"
+      ]
+    },
+    {
+      "company": "W Hotels",
+      "industry": "Hotels",
+      "key_practices": [
+        "Empleados entrenados para escuchar pistas y anticipar necesidades",
+        "Si un huésped se queja de dolor de garganta, le envían sopa de pollo gratis"
+      ]
+    },
+    {
+      "company": "Superquinn",
+      "industry": "Grocery chain",
+      "location": "Ireland",
+      "key_practices": [
+        "Feargal Quinn camina los pasillos de sus tiendas cada mes",
+        "Dos veces al mes invita a doce clientes a una discusión de dos horas",
+        "Puntos 'goof' por señalar problemas",
+        "Más del 90% de los clientes compran al menos un artículo de la panadería cada semana"
+      ]
+    },
+    {
+      "company": "Bank of Tampa",
+      "industry": "Banking",
+      "location": "Tampa, Florida",
+      "key_practices": [
+        "Mensaje de difusión a todos los empleados cuando se identifica un servicio excepcional",
+        "Regalo especial para el empleado"
+      ]
+    },
+    {
+      "company": "Jackson Electric Membership Cooperative",
+      "industry": "Electric utility",
+      "location": "Jefferson, Georgia",
+      "key_practices": [
+        "Premios WIT (Whatever It Takes)",
+        "Ceremonia basada en los Academy Awards",
+        "Oscar de 8 pulgadas para el escritorio y premio monetario",
+        "Tema cambia anualmente",
+        "Máxima calificación de J.D. Power and Associates"
+      ]
+    },
+    {
+      "company": "Great American Business Products",
+      "industry": "Office supplies",
+      "location": "Houston, Texas",
+      "key_practices": [
+        "Llamadas respondidas en un promedio de 20 segundos",
+        "Regalo de bonificación por esperar en espera"
+      ]
+    },
+    {
+      "company": "Pizza Hut",
+      "industry": "Food delivery",
+      "key_practices": [
+        "Reconocimiento automático del número de teléfono",
+        "Sugerencia del último pedido",
+        "Direcciones de entrega almacenadas en el sistema"
+      ]
+    },
+    {
+      "company": "Hartness Technologies",
+      "industry": "Technology",
+      "location": "Greenville, SC",
+      "key_practices": [
+        "VRS (Video Response System)",
+        "Servicio 'minutes-later' en lugar de 'same day'",
+        "Cámaras inalámbricas y monitores de alta resolución para reparaciones interactivas"
+      ]
+    },
+    {
+      "company": "Nordstrom",
+      "industry": "Retail",
+      "key_practices": [
+        "Miden ambos pies del cliente antes de vender zapatos",
+        "Servicio al cliente excepcional"
+      ]
+    },
+    {
+      "company": "Embassy Suites / Hampton Inns",
+      "industry": "Hotels",
+      "key_practices": [
+        "Consistencia en apariencia, amenidades y servicio"
+      ]
+    },
+    {
+      "company": "Outback Steakhouse",
+      "industry": "Restaurants",
+      "key_practices": [
+        "Consistencia en calidad de servicio, comida y ambiente"
+      ]
+    },
+    {
+      "company": "Caribou Coffee",
+      "industry": "Coffee shops",
+      "key_practices": [
+        "Energía y conexión con cada cliente",
+        "Conocen los nombres y bebidas de los clientes habituales",
+        "Los clientes invitan a otros a volver"
+      ]
+    },
+    {
+      "company": "Disney World",
+      "industry": "Theme parks",
+      "key_practices": [
+        "Cast members en lugar de empleados",
+        "Onstage y offstage",
+        "Cerrajeros profesionales gratis para visitantes que dejan las llaves dentro del auto",
+        "Fast Pass",
+        "Secciones de estacionamiento con nombres (Daffy 4, Minnie 6)",
+        "Rastreo de tiempos de estacionamiento"
+      ]
+    },
+    {
+      "company": "T&K Roofing",
+      "industry": "Contracting",
+      "location": "Iowa",
+      "key_practices": [
+        "Encuesta de 'lost job'",
+        "Descubrieron que no solo perdían por precio",
+        "Crecieron a pesar de 8 nuevos competidores"
+      ]
+    },
+    {
+      "company": "Wachovia Bank",
+      "industry": "Banking",
+      "key_practices": [
+        "Programa 'Deliver It'",
+        "La Promesa (juramento o código cultural)",
+        "Empleados entrenados como mystery shoppers",
+        "Sistema de reporte y reconocimiento"
+      ]
+    },
+    {
+      "company": "Ben & Jerry's",
+      "industry": "Ice cream",
+      "key_practices": [
+        "Cartas efectivas a clientes",
+        "Apologías creativas y personalizadas",
+        "Cupones por inconvenientes"
+      ]
+    },
+    {
+      "company": "Edward Jones",
+      "industry": "Brokerage",
+      "key_practices": [
+        "Asistente de sucursal llamó a clientes durante incendios en Florida para ofrecer ayuda"
+      ]
+    },
+    {
+      "company": "Gateway Computer",
+      "industry": "Technology",
+      "key_practices": [
+        "Piden el nombre del cliente al inicio de la llamada",
+        "Establecen relación informal desde el principio"
+      ]
+    },
+    {
+      "company": "National Car Rental",
+      "industry": "Car rental",
+      "key_practices": [
+        "Nuevos asociados trabajan en 'the bridge' antes de tomar llamadas en vivo"
+      ]
+    },
+    {
+      "company": "Aquarium (mystery shop)",
+      "industry": "Attractions",
+      "key_practices": [
+        "Personal de servicios al visitante debe involucrar a los visitantes",
+        "La misión es educar"
+      ]
+    },
+    {
+      "company": "Pierre Hotel",
+      "industry": "Hotels",
+      "location": "New York City",
+      "key_practices": [
+        "Mario, assistant general manager, se emociona al ver la lista de quién viene"
+      ]
+    },
+    {
+      "company": "Southeastern Utility",
+      "industry": "Utility",
+      "key_practices": [
+        "Cheque de $100 por cada día de retraso en la conexión de energía"
+      ]
+    },
+    {
+      "company": "Hospital Women's Care Center",
+      "industry": "Healthcare",
+      "location": "Jacksonville, Florida",
+      "key_practices": [
+        "Envía flores a las nuevas familias un mes después de regresar a casa"
+      ]
+    },
+    {
+      "company": "Dentist",
+      "industry": "Healthcare",
+      "key_practices": [
+        "Horario extendido hasta las 8 PM",
+        "Pases de cine para pacientes que esperan demasiado"
+      ]
+    },
+    {
+      "company": "Corporate Information Help Desk",
+      "industry": "IT Support",
+      "key_practices": [
+        "Llamada de seguimiento al día siguiente para asegurar que todo funcione"
+      ]
+    },
+    {
+      "company": "Hotel Desk Clerk (Atlanta Marriott)",
+      "industry": "Hotels",
+      "key_practices": [
+        "Tres cookies y una nota en la habitación del huésped que apreció las cookies del lobby"
+      ]
+    },
+    {
+      "company": "Amazon.com",
+      "industry": "E-commerce",
+      "key_practices": [
+        "Confirmación inmediata del pedido con precio, fecha de envío y agradecimiento"
+      ]
+    },
+    {
+      "company": "Major 800# Call Center",
+      "industry": "Call center",
+      "key_practices": [
+        "Tiempo de espera estimado",
+        "Opción de devolución de llamada"
+      ]
+    },
+    {
+      "company": "Fairmont Chateau Lake Louise",
+      "industry": "Hotels",
+      "location": "Canadian Rockies",
+      "key_practices": [
+        "Estacionamiento nocturno gratuito para vehículos híbridos"
+      ]
+    },
+    {
+      "company": "Bass Shoe Outlet Store",
+      "industry": "Retail",
+      "key_practices": [
+        "Jason: se disculpó por el error, organizó recogida de UPS, sin costo para el cliente"
+      ]
+    },
+    {
+      "company": "The Gourmet Garage",
+      "industry": "Parking garage",
+      "key_practices": [
+        "Música de Broadway en cada piso",
+        "Murales temáticos diferentes en cada piso",
+        "Mensajes grabados en el elevador sobre servicios",
+        "Lavado, encerado, aspirado rápido"
+      ]
+    },
+    {
+      "company": "The Talking Car (dealer)",
+      "industry": "Auto dealer",
+      "key_practices": [
+        "Tarjeta en el tablero pidiendo reproducir una cinta",
+        "El técnico de servicio se presenta y describe todo lo que hizo",
+        "Anima a llamar directamente si hay preguntas"
+      ]
+    }
+  ],
+
+  "key_phrases": {
+    "service_philosophy": [
+      "Dar lo que piden, y luego algo más.",
+      "No solo manejes la transacción, construye una relación.",
+      "Exceder sus expectativas.",
+      "Mover el cielo y la tierra para satisfacer al cliente.",
+      "Damas y caballeros sirviendo a damas y caballeros.",
+      "Somos una compañía de servicio que casualmente vende zapatos.",
+      "Si nos cuidamos unos a otros, podremos cuidar mejor a nuestros huéspedes."
+    ],
+    "service_warnings": [
+      "La palabra 'política' es un detonante emocional.",
+      "No dejes que el cliente se vaya sin que se le haya escuchado.",
+      "El cliente no podría importarle menos quién tiene la culpa.",
+      "No es mi trabajo' no es aceptable.",
+      "Las malas noticias solo empeoran con el tiempo."
+    ]
+  }
+}

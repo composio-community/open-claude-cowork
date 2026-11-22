@@ -1,0 +1,364 @@
+
+SPEECHES  
+Table of Contents 
+ TOC \o "1-3" \h \z \u BASIC SPEECHES	PAGEREF _Toc17365 \h3 
+Incoming call	PAGEREF _Toc17366 \h3 
+Making a call – FOLLOW UP	PAGEREF _Toc17367 \h3 
+Voicemail – FOLLOW UP	PAGEREF _Toc17368 \h3 
+SMS – FOLLOW UP	PAGEREF _Toc17369 \h4 
+DEADLINE EMAIL	PAGEREF _Toc17370 \h4 
+DEADLINE SMS	PAGEREF _Toc17371 \h4 
+CLOSED TICKET EMAIL	PAGEREF _Toc17372 \h4 
+CLOSED TICKET SMS	PAGEREF _Toc17373 \h5 
+CLARIFY + AGREEMENT	PAGEREF _Toc17374 \h5 
+REACTION	PAGEREF _Toc17375 \h5 
+REGRET (CXL Request)	PAGEREF _Toc17376 \h6 
+FOLLOW UP:	PAGEREF _Toc17377 \h6 
+CHARGE (Duplicate)	PAGEREF _Toc17378 \h7 
+Amount not agreed	PAGEREF _Toc17379 \h7 
+DISPUTE OPENED	PAGEREF _Toc17380 \h8 
+AUTHORIZED RETAILER POLICY	PAGEREF _Toc17381 \h8 
+CUSTOMER WITH DISPUTE ALREADY OPENED	PAGEREF _Toc17382 \h8 
+CLARIFY + COMPENSATE	PAGEREF _Toc17383 \h9 
+FIRST SALE REFUND	PAGEREF _Toc17384 \h9 
+TAXES	PAGEREF _Toc17385 \h9 
+GBK	PAGEREF _Toc17386 \h10 
+SHALEM	PAGEREF _Toc17387 \h12 
+INSTRUCTIONS	PAGEREF _Toc17388 \h12 
+RESTOCK	PAGEREF _Toc17389 \h12 
+SUPPORT + EXCHANGE / GIFTS	PAGEREF _Toc17390 \h13 
+MISSING PRODUCT	PAGEREF _Toc17391 \h13 
+DEFECTIVE SYRINGE	PAGEREF _Toc17392 \h14 
+DEFECTIVE DEVICE	PAGEREF _Toc17393 \h14 
+WRONG PRODUCT	PAGEREF _Toc17394 \h15 
+NO RESULTS	PAGEREF _Toc17395 \h15 
+RESOLUTIONS	PAGEREF _Toc17396 \h16 
+INTERNATIONAL SHIPPING - CUSTOMS FEE	PAGEREF _Toc17397 \h16 
+REFUND OPTIONS	PAGEREF _Toc17398 \h16 
+DOCUSIGN INFORMATION	PAGEREF _Toc17399 \h16 
+DOCUSIGN INSTRUCTIONS STEP BY STEP	PAGEREF _Toc17400 \h17 
+BILLPOCKET + SANTANDER REFUND START PROCESS	PAGEREF _Toc17401 \h19 
+CONFIRMATION CHECK EXECUTED	PAGEREF _Toc17402 \h19 
+CONFIRMATION BP / SANTANDER EXECUTED	PAGEREF _Toc17403 \h20 
+CONFIRMATION WIRE TRANSFER EXECUTED	PAGEREF _Toc17404 \h20 
+
+ 
+ 	 
+BASIC SPEECHES 
+Incoming call 
+Thank you for calling the  	; this is NAME. How can I assist you?  
+**To address your inquiry, please provide us with your invoice number to track your purchase. 
+**Thank you for addressing this issue; please allow us to verify this matter with our general manager, and we will get back to you as soon as possible with a proper resolution. (72 hours). Is there anything else I can be of assistance with?  
+**Thank you for calling us, and have a great day. 
+Making a call – FOLLOW UP 
+Hello, good morning, 
+This is the Morena Mia Beauty Group CS department, we are trying to reach *Customer Name*; this is just a follow-up call about a purchase of a skincare treatment that you made on DATE OF SALE at STORE NAME. 
+ We'd like to hear about your experience with your products and if you have any questions. If this is the case, please call us back at 888-249-4189. Our business hours are from 8 a.m. to 5 p.m. Central time. Monday to Friday. 
+Thank you! Have a great day! 
+Voicemail – FOLLOW UP 
+Hello, we are trying to reach CUSTOMER NAME regarding a recent purchase made at CITY NAME for skincare treatment. 
+This is the Morena Mia Beauty Group Customer Service Department; we would like to make sure that you received your products in good condition, and if you have any questions, if this is the case, please call us back at the 888-249-4189 between 8 am to 5 pm eastern time from Monday to Friday.  
+Thank you for listening to this message, and have a nice day.   	 
+SMS – FOLLOW UP 
+Hello *Customer Name*, thank you for your recent skincare treatment purchase! We would like to ensure you have received your products in good condition or if you have any questions that we can help you with. Please type "YES" to schedule a phone call or "NO" if you don't need help. 
+DEADLINE EMAIL 
+Hi CUSTOMER NAME, 
+We haven’t heard back from your previous inquiry. If we don’t hear back from you in the next 96 hours, this ticket will be closed.  
+We know our customers are busy, so if your issue still needs to be resolved or you need further assistance, please reply to this email or at our toll-free number +1 888 249 4189. 
+We appreciate your understanding and preference. 
+DEADLINE SMS 
+Hi, FIRST NAME, 
+We haven’t heard back from your previous inquiry regarding your purchase at STORE NAME. If we don’t hear back from you in the next 96 hours, this ticket will be closed.  
+If you need further assistance, please reply to this message or at: 
+customerservice@emacaribbean.com. We appreciate your understanding and preference. 
+CLOSED TICKET EMAIL 
+Dear CUSTOMER, 
+Per our previous email, this ticket will be closed since we did not receive a response to your last inquiry regarding your purchase at STORE NAME. 
+If you need further assistance, please reply to this email or at our toll-free number +1 888 249 4189. 
+We appreciate your understanding and preference. 
+ 
+ 
+ 
+ 
+CLOSED TICKET SMS 
+Dear CUSTOMER, 
+Per our previous message, this ticket will be closed since we did not receive a response to your last inquiry regarding your purchase at STORE NAME. 
+If you need further assistance, please reply to this message or at: 
+customerservice@emacaribbean.com. We appreciate your understanding and preference. 
+CLARIFY + AGREEMENT 
+REACTION 
+Option 1 (Device): 
+Dear *Customer Name*, 
+  
+Thank you for expressing your concerns. We sincerely apologize for your experience with the products acquired. Please remember that our devices use LED light therapy, a safe and non-invasive treatment, and there are no records of users presenting reactions to this. However, regarding the cosmetics used in the treatment, while our products are designed for all skin types, we recognize that specific formulas can be strong for some individuals and may cause allergic reactions. 
+Please consider that the creams acquired in your package, were included as gifts with the purchase of the device. These are designed to boost the effects of the LED light therapy treatment; however, it is not necessary to use them to appreciate long-term results. 
+We have determined that you have received the *Name of product*, which has a potent formula that provides instant results. Therefore, we would like to replace this with a gentler formula product with no extra cost. We hope you continue enjoying your skincare treatment and appreciate the results you experienced at the store. 
+__________________________ 
+Option 2 (No Device, creams): 
+Dear *Customer Name*, 
+  
+Thank you for expressing your concerns. We sincerely apologize your experience with the products acquired. While our products are designed for all skin types, we recognize that specific formulas can be strong for some individuals and may cause allergic reactions. 
+We have determined that you have received the *Name of product*, which has a potent formula that provides instant results. Therefore, we would like to replace this with a gentler formula product with no extra cost. We hope you continue enjoying your skincare treatment and appreciate the results you experienced at the store. 
+ 
+REGRET (CXL Request) 
+Dear *Customer Name*, 
+  
+Thank you for contacting us and expressing your concerns. We sincerely apologize your experience with our products. Please keep in mind that the purchase receipt you received, includes our no-refund, no-return policy signed upon agreement.  
+These policies must be honored due to the promotional price received, in addition, the cosmetics acquired are for personal use and cannot be accepted back once they leave the store or warehouse, for health and safety reasons. Please consider that your device has a lifetime warranty registered under your name; which cannot be transferred to another person.  
+Since the policies have been signed upon agreement, we are unable to assist you with your return inquiry. 
+  
+Find a copy of the purchase receipt signed upon agreement: 
+*PHOTO* 
+We understand your concerns and that you feel overwhelmed about the purchase; therefore, we will escalate your case to our superiors to review the situation and provide a resolution that compensates for the inconveniences presented. 
+ 
+
+            
+              
+                
+                  
+                  
+                
+              
+            
+          
+FOLLOW UP: 
+Hello CUSTOMER,  
+Following up on our previous PHONE CALL / EMAIL, we have addressed your cancellation inquiry and mentioned your concerns about the products acquired. 
+Due to our store policies stated in your receipt where we mention we do not provide any return or refund options; we must escalate this to review our available options. After addressing your concerns, we have been notified that we must honor our, we cannot accept back the products acquired once they have left our store or warehouse for the reasons mentioned previously. 
+We would love for you to feel more comfortable about your purchase; we have been approved to provide (PREAPPROVED OPTIONS) as compensation for the inconvenience. 
+ 
+CHARGE (Duplicate) 
+Dear *Customer Name*, 
+  
+We are trying to reach you regarding your recent skincare purchase made at *STORE AND REGION* on *PURCHASE DATE*.  
+Our accounting department notified us regarding a duplicate charge on behalf of your *$ AMOUNT* purchase, and we reaching out to start the refund process for this.  
+Unfortunately, we cannot refund this to the same payment method; since this has been processed through a Mexican terminal, the bank has already transferred the money into our account, and we cannot request them to reverse or fix the charge. 
+  
+Therefore, our option to process the refund is to send you money for the total amount from our bank account. This option is to make you a direct deposit into your bank account (International Wire Transfer - Bank information required). 
+  
+Please let us know your preference to continue with the process. 
+ 
+Amount not agreed 
+Dear *Customer Name*, 
+ Thank you for contacting us and expressing your concerns; we have verified your information and we were able to confirm that the price stated on your receipt for the product *NAME* was of *$ AMOUNT*; before taxes. Please see the evidence below.  
+*PHOTO* 
+Keep in mind that the price on the receipt was provided to you at the moment of purchase to confirm the price and product stated, and this was signed upon agreement.  
+We sincerely apologize for the inconvenience; it seems like this has been a misunderstanding given the total price, including the taxes, was confirmed. For the inconvenience, we would like to compensate you by *PREAPPROVED OPTIONS*. 
+Please confirm if you would like to proceed with this option for us to provide further instructions on how to receive this. 
+ 
+DISPUTE OPENED 
+Dear Customer, 
+Please note that disputes are long-term processes between the banks for up to 3 months when your bank reaches our bank requesting information to validate the transaction and purchase. 
+Given that we count on a store policy stated on your receipt, provided for you to sign up on the agreement, there is a high probability that the bank will close the case in our favor. 
+We will compensate you for your inconvenience; however, our previous offer will no longer be available once the dispute is created or resolved. 
+ 
+AUTHORIZED RETAILER POLICY 
+Our company works with brands that fit our high-quality standards; these are manufactured and distributed through authorized retailers, including their official websites.    
+Products purchased from non-certified stores or unknown sources won’t be eligible for the warranty (in the case of a device), as we cannot ensure the authenticity, quality, or condition of the products they claim to sell. Products can expire, be damaged, have altered formulas, be counterfeited, used, or otherwise unsafe.    
+*A Disclaimer on this matter can be found on the official websites of the products acquired. 
+ 
+CUSTOMER WITH DISPUTE ALREADY OPENED 
+Thank you for your comments; we sincerely apologize for your experience. Given that there is a dispute and the transaction is on hold due to the bank process, we cannot assist you with a CXL; we also count on a store policy stated on your store receipt (mention policy). However, please allow me to escalate your comments to a supervisor for us to review this and verify our possible resolutions. 
+*Mention 48hour window + open CU task. 
+ 
+CLARIFY + COMPENSATE 
+FIRST SALE REFUND 
+Dear *Customer Name*, 
+Thank you for reaching out and sharing your concerns. We want to clarify why your first purchase appears on your statement.   
+When our representative mentions no charge for the first purchase, they mean that the amount is deducted from your second purchase. The initial charge cannot be canceled, so it will still show on your bank statement. Instead, the price for your second purchase is adjusted to reflect that deduction. Since we use Mexican terminals that transfer payments instantly, this process helps avoid complications.  
+For clarity, the subtotal for your second purchase is *$$Upsale + $$first sale*, and after deducting the first payment, it will be *$$Upsale*, before taxes. 
+We apologize for any confusion and would like to offer you *(Confirm SPARE) * as compensation, which is valued higher than your first purchase total. 
+*INFORMATION OF THE PRODUCT OFFERED* 
+Please confirm if you would like to receive this for us to start the shipping process with no extra cost, immediately. 
+ 
+TAXES 
+Important: Confirm if the customer applied for the Giveback process. 
+Option one (no GBK):  
+Dear *Customer Name*, 
+ 
+Thank you for reaching out and sharing your concerns. We would like to clarify that the Mexican government imposes mandatory taxes to every purchase made, including at airports. Since our stores do not operate in a duty-free zone, Mexico's general IVA/VAT rate of 16% applies to all goods and services.  
+Please keep in mind that the store receipt is provided at the moment of the purchase so that you can review the information listed, which includes the products acquired and the total price agreed (including taxes). 
+*CLEAR PHOTO OF THE RECEIPT SHOWING TAXES* 
+We apologize for any confusion and would like to offer you *(Confirm SPARE) * as compensation. 
+Please confirm if you would like to receive this for us to start the shipping process with no extra cost, immediately. ________________________ Option two (with GBK):  
+Dear *Customer Name*, 
+ 
+Thank you for reaching out and sharing your concerns. We would like to clarify that the Mexican government imposes mandatory taxes to every purchase made, including at airports. Since our stores do not operate in a duty-free zone, Mexico's general IVA/VAT rate of 16% applies to all goods and services.  
+Please keep in mind that, we are among the few companies offering a partial tax refund process for VIP customers, managed by Give Back, a third-party service. This allows you to receive 9% of your total purchase within 45 business days on the same credit card used for the transaction.  
+Please note that no company is obligated to provide a tax refund, and there are no processes that offers a full refund of 16%. Please find below the form you filled out in the store, which clearly shows that the tax refund is 9%: 
+*PHOTO OF THE GBK FLYER SIGNED BY THE CUSTOMER* 
+We apologize for any confusion and would like to offer you *(Confirm SPARE)* as compensation. 
+Please confirm if you would like to receive this for us to start the shipping process with no extra cost, immediately. 
+ 
+ 
+GBK 
+Option 1 (General information): 
+Dear *Customer Name*, 
+  
+Thank you for contacting us. We would like to confirm that your purchase applied for a partial tax-refund benefit for having purchased with us. Note that this process is handled by Give Back, a third-party company we affiliated with, to offer a partial refund of 9% to our foreign VIP customer. This process is handled by them and the Mexican tax authorities; the regular process takes up to 45 business days to be completed.  
+  
+Detailed information about this process is confidential and can only be provided to the cardholder; therefore, we suggest you contact the company in charge if you have any questions or concerns about the process. 
+GIVEBACK CONTACT INFORMATION  
+Phone number: (202) 838-4850 
+Email: care@givebackmytaxrefund.com 
+_____________________________ 
+  
+Option 2 (Process declined): 
+Dear *Customer Name*,  
+  
+We would like to remind you about the partial tax refund process started at the store, on behalf your purchase made with us. Please note we have been informed by Give Back, the third-party company that handles this process, that unfortunately, they were unable to fulfill your process given that *REASON OF REJECTION*. 
+  
+Note that every tax refund process for foreign customers purchasing in Mexico, are subject to strict requirements and protocols imposed by the Mexican governmental Tax institution that validates the documents and paperwork submitted. Therefore, they were unable to continue with the process. 
+  
+We sincerely apologize for the inconvenience and would like to offer you *(Confirm SPARE)*, as compensation. 
+Please confirm if you would like to receive this for us to start the shipping process with no extra cost, immediately. 
+ 
+SHALEM 
+Dear *Customer Name*, 
+ 
+Thank you for reaching out to us. We would like to remind you about the monthly installments agreed at the store. Please keep in mind that after the making an initial payment for *$$Upsale*, the remaining balance was processed through a payment plan. 
+Please find below the information of behalf of your plan: 
+Purchase date:  
+Down payment:  
+Financed amount:  
+Payment plan: # month payment plan for:  Payment date: Every. 
+We were informed your contract was emailed to you. We would greatly appreciate your confirmation that your contract has been received correctly. 
+ 
+INSTRUCTIONS 
+PRODUCT INSTRUCTIONS #INVOICE, (STORE). 
+Hello *Customer Name*.   
+It was a pleasure to meet you at STORE NAME. We are so excited for you to start with your new skincare treatment! 
+Please find below the instructions for your products: 
+-Daily routine: 
+-Weekly routine: 
+-Monthly routine: -Device name: 
+Feel free to contact us with any further questions you may have. 
+ 
+RESTOCK 
+Dear *Customer Name*, 
+Thank you for reaching out to us and for your preference! Kindly note that for future restocks, please provide code #INVOICE through this email; we will gladly connect you to our call center so our skin specialists can assist you with your restocking and provide the best recommendations for your skin concerns (special discount for being a VIP customer). 
+We count on a warehouse in the United States to receive your products as soon as possible. 
+Please note that they will be reaching out to you through the email: bestcosmetics@emacaribbean.com Have a wonderful day! 
+SUPPORT + EXCHANGE / GIFTS. 
+MISSING PRODUCT 
+Important: Confirm if the missing product is listed on the purchase receipt and if it was meant to be shipped or taken from the store. 
+Option one (included on shipment):  
+Hello *Customer Name*,  
+Thank you for contacting us and for addressing this situation. Please note that after revising your information, we found that the *name of missing product stated*, was supposed to be shipped to you on your package: *tracking number*. 
+Please note that to escalate your case with our warehouse and process a shipment for this, we need you to send us a photo showing the product(s) you have received in this package so that we can have evidence of the missing item(s).  
+ We hope to hear back from you soon. 
+_____________________ 
+Option two (took from the store): 
+Hello *Customer Name*,  
+Thank you for contacting us and for addressing this situation. Please note that after revising your information, we found that the *name of missing product stated*, was supposed to be provided at the store, along with *rest of the products provided at the store*. 
+Please note that to escalate your case with our superiors and process a shipment for this, we need you to send us a photo showing the product(s) you have received in the store so that we can have evidence of the missing item(s).  
+ We hope to hear back from you soon. 
+ 
+DEFECTIVE SYRINGE 
+Dear *Customer Name*, 
+Thank you for contacting us; we will be glad to assist you. Our sincere apologies for this inconvenience presented with your product acquired; kindly note we count on another customer that purchased in the same week and experienced the same issue; therefore, we have escalated this to our supplier, and they have mentioned this might be a manufacturing issue. 
+We would like to compensate for this by send a replacement immediately through our USA warehouse so you can receive this as soon as possible.  
+Please confirm your shipping information to start the process as soon as possible at no extra cost. 
+ 
+DEFECTIVE DEVICE 
+Dear *Customer Name*, 
+Thank you for contacting us; we will be glad to start providing you with assistance on applying your device lifetime warranty and provide a brand new *name of the device*. We would like to explain the replacement process to you. 
+ STEPS: 
+1: Record a short video showing and explaining the malfunction on your device. Try to make it brief; 30 seconds to 1 minute is fine. 
+2: Provide us with the mailing address where you would like to receive your new device. *NOTE: Our shipments require a signature for delivery. If you would like to receive this without a sign request, please let us know. 
+Please reply to this email with your video and mailing address information so we can start the replacement process immediately. 
+We hope to hear from you soon. 
+Have a great day! 
+ 
+WRONG PRODUCT 
+Dear *Customer Name*, 
+  
+Thank you for contacting us and for addressing this situation. We sincerely apologize for the inconvenience presented. To escalate your case and assist you with this, we would appreciate it if you could provide us with a photo of the incorrect product received so that we can start with the shipment of the correct item immediately.  
+  
+We hope to hear back from you soon. 
+ 
+NO RESULTS 
+Dear *Customer Name*, 
+Thank you for contacting us and for addressing all your comments and concerns. We sincerely apologize for the inconvenience and dissatisfaction you experienced with the products.  
+Note that the results depend on the application of the treatment acquired. We can help you with detailed instructions and recommendations to get better results; however, keep in mind that the long-term results take from 3 to 6 months of usage to be visible. You must ensure you are using it as recommended. As you may know, for every treatment, you need to be consistent, and the results can also depend on other factors such as lifestyle, genetics, sun exposure, sleep quality, hydration, and the care you have after the treatment.  
+We suggest you continue with the treatment as instructed. If you need us to send your instructions again, please let us know. Additionally, we would like to help you adjust the treatment that may help you boost the results.  
+Let us know your main skin concerns so that we can verify the best options available.  
+We hope to hear back from you soon. 
+ 
+RESOLUTIONS 
+INTERNATIONAL SHIPPING - CUSTOMS FEE 
+CUSTOMER
+	Dear , 
+Please keep in mind this is an international shipment; therefore, we must declare a value for the shipped items. However, we provide the minimum price to avoid paying taxes or customs. Please consider once the package is in the hands of customs, we don’t have control over their policies or charges. 
+If you have any more questions or concerns, please reply to this email or at our toll-free number listed below; it will be a pleasure to assist you! 
+Have a good day! 
+ 
+REFUND OPTIONS 
+Dear CUSTOMER, 
+Thank you for your prompt reply. Unfortunately, we cannot refund this to the same payment method; since this has been processed through a Mexican terminal, the bank has already transferred the money into our account, and we cannot request them to reverse or fix the charge.  
+Therefore, our option to process the refund is to send you money for the total amount ($ AMOUNT). Please find the following options to process this: 
+REFUND OPTIONS: 
+Wire Transfer - direct deposit to your bank account - Bank information required. 
+Check - subjected to mail delivery - home address and full name will be required. 
+Please let us know your preference to continue with the process. 
+ 
+DOCUSIGN INFORMATION 
+Dear CUSTOMER,  
+Thank you for getting back to us and for the information provided. Kindly note that to start with the process, we will send a digital document to your email address, where your signature and ID photo will be required for you to agree to receive the (AMOUNT). 
+Since we cannot refund this directly to your credit card, our accounting department requires official evidence that the same cardholder will receive the refund. 
+After completing this, we will proceed with the check and confirmation through this email. 
+We are looking forward to continuing to assist you shortly! 
+ 
+DOCUSIGN INSTRUCTIONS STEP BY STEP 
+Dear Customer, 
+ Find instructions on how to sign the document in this email: 
+ Click on "Review Document" 
+  
+The following page will open; click on "Continue."
+ 
+For the signature, click on the icon where it says "Sign," and a pop-up for you to add your signature should appear: 
+  
+3.1 Click "Draw" and use your mouse or touchpad to draw your signature, as in your ID. After finishing, click on "adopt and sign.” 
+ 
+3.2 A second option to complete your signature will be to click on "Select Style" and "Change Style" to choose the signature that gets the closest to the signature on your ID. 
+ 
+ Click on the icon with the clip on, and a pop-up requesting to attach a picture of your ID will be visible. 
+  
+4.1 Click on "Upload a file" and choose the picture of your ID from your computer.
+ 
+ 5. Once everything is attached, click "Finish," Our offices will receive this automatically. 
+ 
+Please note that you can also do this process from your phone, which will be the same steps. 
+Please let us know if you have further questions or concerns so we can help you via phone.  
+Have a great day! 
+ 
+BILLPOCKET + SANTANDER REFUND START PROCESS 
+Hello NAME, 
+As part of our procedure to process a refund for your total purchase, we need written confirmation from you regarding the following concerns: 
+You have not/will not file a chargeback dispute with your bank issuer. 
+IMPORTANT: Please do not dispute the charges with your bank. We are expediting your refund to get funds to you quickly. 
+If you have disputed the charges, this will interfere with the open refund process. 
+You agree that we will refund the same payment method originally billed. 
+Please reply to this email and answer statement number 1&2 for us to proceed with the process. 
+**AVAILABLE ONLY FOR: SALES UP TO 30 DAYS (BP) / SALES UP TO 3 MONTHS (SANTANDER). 
+ 
+CONFIRMATION CHECK EXECUTED 
+Dear CUSTOMER, 
+Thank you for being so patient with this matter; kindly note your refund has been successfully processed; please find below the confirmation on this matter: 
+*PHOTO AREA* 
+Please note that the estimated delivery date is MM/DD at the address previously confirmed (CITY, STATE). Please consider you can receive this earlier or later than expected since this is subject to mail delivery. Let us know as soon as you receive your refund! 
+Feel free to contact us with any questions you may have. 
+Have a great weekend! 
+CONFIRMATION BP / SANTANDER EXECUTED 
+Dear CUSTOMER, 
+Thank you for being so patient with this matter! Regarding your refund process, we have confirmed this has been successfully processed. 
+Please note that you should be able to see this reflected on your side between 2-4 business days. 
+Please confirm with us as soon as you receive the funds back successfully. 
+I hope you have a wonderful day! 
+CONFIRMATION WIRE TRANSFER EXECUTED 
+Dear CUSTOMER, 
+ Thank you for being so patient with this matter! Regarding your refund process, we have confirmed this has been successfully processed. 
+ *PHOTO* 
+ Please note that you should be able to see this reflected on your side between 24 to 48 hours or up to 5 business days, depending on your financial institution. 
+ Please confirm with us as soon as you receive the funds back successfully. We hope to hear from you soon. We are at your service in case you require further assistance with your concerns. Do not hesitate to contact us at the toll-free number; we are available 
+Monday to Friday, from 8:00 a.m. to 5:00 p.m. CST 

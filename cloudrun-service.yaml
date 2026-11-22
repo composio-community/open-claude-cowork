@@ -1,0 +1,35 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: open-claude-cowork
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/minScale: "0"
+        autoscaling.knative.dev/maxScale: "5"
+    spec:
+      containerConcurrency: 80
+      timeoutSeconds: 300
+      containers:
+        - image: open-claude-cowork
+          ports:
+            - name: http1
+              containerPort: 8080
+          env:
+            - name: NODE_ENV
+              value: "production"
+            - name: CLICKUP_MCP_URL
+              value: "https://mcp.clickup.com/mcp"
+            - name: BRAVE_API_KEY
+              value: ""
+            - name: ANTHROPIC_API_KEY
+              value: ""
+            - name: CLICKUP_API_KEY
+              value: ""
+            - name: COMPOSIO_API_KEY
+              value: ""
+          resources:
+            limits:
+              cpu: "1000m"
+              memory: "1Gi"

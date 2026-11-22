@@ -19,6 +19,22 @@
           </svg>
           <span>New Chat</span>
         </button>
+        <button class="theme-toggle-btn" id="themeToggleSidebar" onclick="toggleTheme()" title="Toggle dark mode">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
         <button class="sidebar-collapse-btn" id="leftSidebarToggle" title="Collapse sidebar">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polyline points="15 18 9 12 15 6"></polyline>
@@ -51,10 +67,11 @@
       <div class="input-container home-input">
         <form id="homeForm" class="input-form">
           <div class="input-wrapper">
+            <div class="slash-autocomplete hidden" id="homeSlashMenu"></div>
             <textarea
               id="homeInput"
               class="message-input"
-              placeholder="Ask me anything"
+              placeholder="Ask me anything (type /skill to use a skill)"
               autocomplete="off"
               rows="1"
             ></textarea>
@@ -73,6 +90,28 @@
                     <polyline points="12 6 12 12 16 14"></polyline>
                   </svg>
                 </button>
+                <!-- Skills Selector Dropdown -->
+                <div class="dropdown-container" id="homeSkillsDropdown">
+                  <button type="button" class="skills-selector" title="Insert skill (/skill)">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg>
+                    <span>Skills</span>
+                  </button>
+                  <div class="dropdown-menu skills-menu">
+                    <div class="dropdown-empty">Loading skills...</div>
+                  </div>
+                </div>
+                <!-- MCP Status Dropdown -->
+                <div class="dropdown-container" id="homeMcpDropdown">
+                  <button type="button" class="mcp-status-btn" title="MCP Integrations status">
+                    <span class="mcp-status-dot"></span>
+                    <span>MCP</span>
+                  </button>
+                  <div class="dropdown-menu mcp-menu">
+                    <div class="dropdown-empty">Checking MCP status...</div>
+                  </div>
+                </div>
               </div>
               <div class="right-controls">
                 <!-- Provider Selector Dropdown -->
@@ -98,6 +137,12 @@
                         <span class="item-label">Opencode</span>
                       </div>
                       <span class="item-desc">Opencode SDK</span>
+                    </div>
+                    <div class="dropdown-item" data-value="gemini">
+                      <div class="item-row">
+                        <span class="item-label">Gemini</span>
+                      </div>
+                      <span class="item-desc">Google Gemini (gemini-3.8-flash)</span>
                     </div>
                   </div>
                 </div>
@@ -159,12 +204,30 @@
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
-          <button class="new-chat-btn" onclick="startNewChat()" title="New chat">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="12" y1="5" x2="12" y2="19"></line>
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-            </svg>
-          </button>
+          <div class="chat-header-actions">
+            <button class="theme-toggle-btn" id="themeToggleChat" onclick="toggleTheme()" title="Toggle dark mode">
+              <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+              <svg class="moon-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </button>
+            <button class="new-chat-btn" onclick="startNewChat()" title="New chat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+          </div>
         </header>
 
         <div class="messages-container" id="chatMessages">
@@ -175,10 +238,11 @@
           <div class="input-container">
             <form id="chatForm" class="input-form">
               <div class="input-wrapper">
+                <div class="slash-autocomplete hidden" id="chatSlashMenu"></div>
                 <textarea
                   id="messageInput"
                   class="message-input"
-                  placeholder="Reply..."
+                  placeholder="Reply... (type /skill to use a skill)"
                   autocomplete="off"
                   rows="1"
                 ></textarea>
@@ -197,6 +261,28 @@
                         <polyline points="12 6 12 12 16 14"></polyline>
                       </svg>
                     </button>
+                    <!-- Skills Selector Dropdown -->
+                    <div class="dropdown-container" id="chatSkillsDropdown">
+                      <button type="button" class="skills-selector" title="Insert skill (/skill)">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                        </svg>
+                        <span>Skills</span>
+                      </button>
+                      <div class="dropdown-menu skills-menu">
+                        <div class="dropdown-empty">Loading skills...</div>
+                      </div>
+                    </div>
+                    <!-- MCP Status Dropdown -->
+                    <div class="dropdown-container" id="chatMcpDropdown">
+                      <button type="button" class="mcp-status-btn" title="MCP Integrations status">
+                        <span class="mcp-status-dot"></span>
+                        <span>MCP</span>
+                      </button>
+                      <div class="dropdown-menu mcp-menu">
+                        <div class="dropdown-empty">Checking MCP status...</div>
+                      </div>
+                    </div>
                   </div>
                   <div class="right-controls">
                     <!-- Provider Selector Dropdown -->
@@ -222,6 +308,12 @@
                             <span class="item-label">Opencode</span>
                           </div>
                           <span class="item-desc">Opencode SDK</span>
+                        </div>
+                        <div class="dropdown-item" data-value="gemini">
+                          <div class="item-row">
+                            <span class="item-label">Gemini</span>
+                          </div>
+                          <span class="item-desc">Google Gemini (gemini-3.8-flash)</span>
                         </div>
                       </div>
                     </div>
@@ -326,6 +418,7 @@
     </button>
   </div>
 
+  <script src="web-bridge.js"></script>
   <script src="renderer.js"></script>
 </body>
 </html>
