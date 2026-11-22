@@ -132,7 +132,8 @@ function loadCustomMcpServers() {
           ...(cfg.headers ? { headers: cfg.headers } : {})
         };
       } else if (cfg.type === 'stdio' && cfg.command) {
-        const fallback = process.env.FILESYSTEM_MCP_PATH || cfg.linuxFallbackPath || process.cwd();
+        const candidateLinux = process.env.FILESYSTEM_MCP_PATH || cfg.linuxFallbackPath;
+        const fallback = (candidateLinux && fs.existsSync(candidateLinux)) ? candidateLinux : process.cwd();
         const args = Array.isArray(cfg.args)
           ? cfg.args.map((arg) => (
               process.platform !== 'win32' && typeof arg === 'string' && /^[a-zA-Z]:[\\/]/.test(arg)
@@ -147,6 +148,7 @@ function loadCustomMcpServers() {
           type: 'stdio',
           command: cfg.command,
           args,
+          ...(cfg.label ? { label: cfg.label } : {}),
           ...(cfg.env ? { env: cfg.env } : {}),
           ...(needsWinShell ? { shell: true } : {})
         };
@@ -521,6 +523,21 @@ app.get('/api/mcp/status', (_req, res) => {
   const clickUpConnected = hasClickUpKey || oauthStatus.authenticated;
   const hasBraveKey = isConfiguredSecret(process.env.BRAVE_API_KEY);
   const hasComposioKey = isConfiguredSecret(process.env.COMPOSIO_API_KEY);
+  const customServers = loadCustomMcpServers();
+  const customStatus = {};
+
+  for (const [name, cfg] of Object.entries(customServers)) {
+    const detail = cfg.type === 'http'
+      ? cfg.url
+      : (Array.isArray(cfg.args) && cfg.args.length > 0 ? `stdio · ${cfg.args[cfg.args.length - 1]}` : `stdio · ${cfg.command}`);
+    customStatus[name] = {
+      name,
+      label: cfg.label || `${name.charAt(0).toUpperCase()}${name.slice(1)} MCP`,
+      type: cfg.type,
+      detail,
+      configured: true
+    };
+  }
 
   res.json({
     clickup: {
@@ -539,7 +556,9 @@ app.get('/api/mcp/status', (_req, res) => {
     composio: {
       configured: hasComposioKey,
       sessionActive: Boolean(defaultComposioSession?.mcp?.url)
-    }
+    },
+    ...(customStatus.filesystem ? { filesystem: customStatus.filesystem } : {}),
+    custom: customStatus
   });
 });
 

@@ -2,6 +2,7 @@
   "mcpServers": {
     "filesystem": {
       "enabled": true,
+      "label": "Filesystem MCP",
       "type": "stdio",
       "command": "npx",
       "args": [
@@ -9,7 +10,7 @@
         "@modelcontextprotocol/server-filesystem",
         "C:\\Users"
       ],
-      "linuxFallbackPath": "/app"
+      "linuxFallbackPath": "/mnt/c_users"
     }
   }
 }

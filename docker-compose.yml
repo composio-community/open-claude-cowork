@@ -25,6 +25,8 @@ services:
       - ./renderer:/app/renderer
       - ./.claude:/app/.claude
       - ./.env:/app/.env
+      # Montar unidad C:\Users para el MCP de Filesystem dentro del contenedor
+      - C:/Users:/mnt/c_users
       # Preservar las dependencias instaladas dentro del contenedor Linux
       - /app/server/node_modules
     # Habilitar reinicio automático de Node al modificar archivos de server/

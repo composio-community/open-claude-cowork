@@ -266,6 +266,17 @@ function renderMcpMenus() {
       ? '<span class="mcp-badge ok">Ready</span>'
       : '<span class="mcp-badge off">Unconfigured</span>';
 
+    const customEntries = Object.values(mcpStatus?.custom || {});
+    const customRowsHtml = customEntries.map((item) => `
+      <div class="mcp-status-row">
+        <div>
+          <div class="mcp-status-name">${escapeHtml(item.label || item.name)}</div>
+          <div class="mcp-status-detail">${escapeHtml(item.detail || item.type || 'stdio')}</div>
+        </div>
+        <span class="mcp-badge ${item.configured ? 'ok' : 'off'}">${item.configured ? 'Ready' : 'Unconfigured'}</span>
+      </div>
+    `).join('');
+
     menu.innerHTML = `
       <div class="mcp-status-row">
         <div>
@@ -288,6 +299,7 @@ function renderMcpMenus() {
         </div>
         ${composioBadge}
       </div>
+      ${customRowsHtml}
     `;
   });
 }
